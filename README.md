@@ -1,19 +1,15 @@
-# UCSB ECE3 Introduction to Electrical and Computer Engineering
-
+# UCSB ECE278a Digital Image Processing
 Welcome!
 
 This is the GitHub repository for the course:
 
-ECE-3: Introduction to Electrical and Computer Engineering at UC Santa Barbara, Fall 2021.
+ECE-278a: Digital Image Processing at UC Santa Barbara, Winter 2022.
 
 Instructor: [Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [BioShape Lab](bioshape.ece.ucsb.edu), UC Santa Barbara.
 
-TAs: Monsij Biswal, Orestis Paraskevas, Alejandro Quevedo, Bella Yue.
-
 You can access and run the lecture slides and lab notebooks by clicking on the Binder link below.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bioshape-lab/ece3/main?filepath=lectures)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bioshape-lab/ece278a/main?filepath=lectures)
 
-The content of this class relies on the following textbooks:
-- [Introduction to Linear Algebra](https://web.stanford.edu/~boyd/vmls/vmls.pdf), by Stephen Boyd and Lieven Vandenberghe
-- [Introduction to matrix computations](https://stanford.app.box.com/s/12f2f622y831bp6jb5zs/file/21165143711), by Margot Gerritsen
+The content of this class relies on the following excellent textbook:
+- [Computer Vision: Algorithms and Applications](https://szeliski.org/Book/), by [Richard Sweliski](http://szeliski.org/RichardSzeliski.htm).
