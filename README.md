@@ -11,5 +11,6 @@ You can access and run the lecture slides and lab notebooks by clicking on the B
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bioshape-lab/ece278a/main?filepath=lectures)
 
-The content of this class relies on the following excellent textbook:
-- [Computer Vision: Algorithms and Applications](https://szeliski.org/Book/), by [Richard Sweliski](http://szeliski.org/RichardSzeliski.htm).
+The content of this class relies on the following excellent resources:
+- Textbook [Computer Vision: Algorithms and Applications](https://szeliski.org/Book/), by [Richard Sweliski](http://szeliski.org/RichardSzeliski.htm).
+- Google Slides by [Steve Seitz](https://www.smseitz.com/).
