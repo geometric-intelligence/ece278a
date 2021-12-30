@@ -14,3 +14,4 @@ You can access and run the lecture slides and lab notebooks by clicking on the B
 The content of this class relies on the following excellent resources:
 - Textbook [Computer Vision: Algorithms and Applications](https://szeliski.org/Book/), by [Richard Sweliski](http://szeliski.org/RichardSzeliski.htm).
 - Google Slides by [Steve Seitz](https://www.smseitz.com/).
+- [Brown, M. S. (2019). ICCV 2019 tutorial on understanding color and the in-camera image processing pipeline for computer vision.](https://www.eecs.yorku.ca/~mbrown/ICCV19_Tutorial_MSBrown.pdf)
