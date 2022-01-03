@@ -11,3 +11,12 @@
   - Add the Jupyter notebook that represents the bulk of your project.
 - Make sure to indicate which teammate did which part of the work.
 - You can submit code to this repository anytime until the deadline.
+
+# Grading Criteria
+
+- Project topic: is the question tackled by the project sounded, and is the dataset appropriate to tackle this question?
+- Tools: does the project rely on tools taught by this class?
+- Exhaustive experiments: does the project run enough experiments to address the question at hand?
+- Software: does the code run?
+- Report: is the report well-written and explanatory?
+- Presentation: is the presentation clear and does it describe well the project?
