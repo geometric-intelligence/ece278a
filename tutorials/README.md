@@ -32,8 +32,8 @@ The `template-app` folder contains an example of web app. To run it:
   - Team: TBD
 - [ ] Point operators and Neighborhood operators
   - Team: TBD
-- [ ] Convolution
-  - Team: TBD
+- [x ] Convolution
+  - Team: Canan Cebeci and Sansar Yogi
 - [ ] Fourier Transforms
   - Team: TBD
 - [ ] Pyramids and Wavelets
