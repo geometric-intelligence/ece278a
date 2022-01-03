@@ -29,7 +29,7 @@ The `example-app` folder contains an example of web app. To run it:
 - [ ] Geometric Transformations: 2D/3D rotations, translations, similarities, etc
   - Team: TBD
 - [ ] Image Formation: camera models, camera extrinsic and intrinsic parameters
-  - Team: TBD
+  - Team: Sean MacKenzie, and XXX.
 - [ ] Point operators and Neighborhood operators
   - Team: TBD
 - [x] Convolution
