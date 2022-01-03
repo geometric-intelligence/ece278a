@@ -33,7 +33,7 @@ The `example-app` folder contains an example of web app. To run it:
 - [ ] Point operators and Neighborhood operators
   - Team: TBD
 - [x] Convolution
-  - Team: Canan Cebeci and Sansar Yogi
+  - Team: Canan Cebeci, Abhijith Atreya and Sansar Yogi
 - [ ] Fourier Transforms
   - Team: TBD
 - [ ] Pyramids and Wavelets
