@@ -54,3 +54,11 @@ The `example-app` folder contains an example of web app. To run it:
   - Team: TBD
 - [ ] 3D Reconstruction: Model-based reconstruction
   - Team: TBD
+
+# Grading criteria
+
+- Exhaustive: Does the app cover all the materials seen in class on this topic?
+- Comprehensive: Is the app understandable from a newcomer's perspective?
+- Self-contained: Are the concepts in the app clear without requiring any additional materials?
+- Software: Does the app run without bugs?
+- Visuals: Do the visualization help get intuition about the materials?
