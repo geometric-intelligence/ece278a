@@ -28,8 +28,8 @@ The `example-app` folder contains an example of web app. To run it:
 
 - [ ] Geometric Transformations: 2D/3D rotations, translations, similarities, etc
   - Team: TBD
-- [ ] Image Formation: camera models, camera extrinsic and intrinsic parameters
-  - Team: Sean MacKenzie, and XXX.
+- [x] Image Formation: camera models, camera extrinsic and intrinsic parameters
+  - Team: Sean MacKenzie and Peter Li.
 - [ ] Point operators and Neighborhood operators
   - Team: TBD
 - [x] Convolution
@@ -47,7 +47,7 @@ The `example-app` folder contains an example of web app. To run it:
 - [x] Contour Tracing
   - Team: Zexi Liu, Kerr Ding and Zeben Wu
 - [ ] Image Segmentation
-  - Team: TBD
+  - Team: Monsij Biswal and XXX.
 - [ ] Pairwise Alignment of Images
   - Team: TBD
 - [ ] 3D Reconstruction: Shape from X, Shape representations
