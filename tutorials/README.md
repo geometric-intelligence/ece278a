@@ -37,7 +37,7 @@ The `example-app` folder contains an example of web app. To run it:
 - [ ] Fourier Transforms
   - Team: TBD
 - [x] Pyramids and Wavelets
-  - Team: Jax Burd and Brycen Westgarth
+  - Team: Jax Burd, Enbo Zhou and Brycen Westgarth
 
 
 ## Second review session
