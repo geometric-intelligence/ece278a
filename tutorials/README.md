@@ -44,8 +44,8 @@ The `example-app` folder contains an example of web app. To run it:
 
 - [ ] Feature Detection: Points, Patches, Edges
   - Team: TBD
-- [ ] Contour Tracing
-  - Team: TBD
+- [x] Contour Tracing
+  - Team: Zexi Liu, Kerr Ding and Zeben Wu
 - [ ] Image Segmentation
   - Team: TBD
 - [ ] Pairwise Alignment of Images
