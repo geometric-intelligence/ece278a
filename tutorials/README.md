@@ -43,7 +43,7 @@ The `example-app` folder contains an example of web app. To run it:
 ## Second review session
 
 - [ ] Feature Detection: Points, Patches, Edges
-  - Team: TBD
+  - Team: Alireza Parsay and XXX.
 - [x] Contour Tracing
   - Team: Zexi Liu, Kerr Ding and Zeben Wu
 - [ ] Image Segmentation
