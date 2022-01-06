@@ -34,8 +34,8 @@ The `example-app` folder contains an example of web app. To run it:
   - Team: TBD
 - [x] Convolution
   - Team: Canan Cebeci, Abhijith Atreya and Sansar Yogi
-- [ ] Fourier Transforms
-  - Team: Lalitha Giridhar and XXX.
+- [x] Fourier Transforms
+  - Team: Lalitha Giridhar and Pin-Ting Wang.
 - [x] Pyramids and Wavelets
   - Team: Jax Burd, Enbo Zhou and Brycen Westgarth
 
