@@ -30,8 +30,8 @@ The `example-app` folder contains an example of web app. To run it:
   - Team: TBD
 - [x] Image Formation: camera models, camera extrinsic and intrinsic parameters
   - Team: Sean MacKenzie, Rami Dabit and Peter Li.
-- [ ] Point operators and Neighborhood operators
-  - Team: TBD
+- [x] Point operators and Neighborhood operators
+  - Team: Swetha Pillai and Monsij Biswal.
 - [x] Convolution
   - Team: Canan Cebeci, Abhijith Atreya and Sansar Yogi
 - [x] Fourier Transforms
@@ -47,7 +47,7 @@ The `example-app` folder contains an example of web app. To run it:
 - [x] Contour Tracing
   - Team: Zexi Liu, Kerr Ding and Zeben Wu
 - [ ] Image Segmentation
-  - Team: Monsij Biswal and XXX.
+  - Team: TBD
 - [ ] Pairwise Alignment of Images
   - Team: TBD
 - [ ] 3D Reconstruction: Shape from X, Shape representations
