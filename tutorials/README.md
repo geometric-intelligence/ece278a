@@ -42,14 +42,14 @@ The `example-app` folder contains an example of web app. To run it:
 
 ## Second review session
 
-- [x] Feature Detection: Points, Patches, Edges
-  - Team: Alireza Parsay and Mason Corey.
+- [ ] Feature Detection: Points, Patches, Edges
+  - Team: Mason Corey and XXX.
 - [x] Contour Tracing
   - Team: Zexi Liu, Kerr Ding and Zeben Wu
 - [ ] Image Segmentation
   - Team: TBD
 - [ ] Pairwise Alignment of Images
-  - Team: TBD
+  - Team: Jack Tang and XXX.
 - [ ] 3D Reconstruction: Shape from X, Shape representations
   - Team: TBD
 - [ ] 3D Reconstruction: Model-based reconstruction
