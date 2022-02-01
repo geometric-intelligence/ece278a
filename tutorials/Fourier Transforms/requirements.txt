@@ -1,0 +1,7 @@
+pillow
+opencv-python-headless
+numpy
+matplotlib
+scikit-image
+streamlit_drawable_canvas==0.8.0
+streamlit==1.5.0

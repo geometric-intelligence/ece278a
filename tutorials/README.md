@@ -36,18 +36,18 @@ The `example-app` folder contains an example of web app. To run it:
   - Team: Canan Cebeci, Abhijith Atreya and Sansar Yogi
 - [x] Fourier Transforms
   - Team: Lalitha Giridhar and Pin-Ting Wang.
-- [x] Pyramids and Wavelets
-  - Team: Jax Burd, Enbo Zhou and Brycen Westgarth
 
 
 ## Second review session
 
+- [x] Pyramids and Wavelets
+  - Team: Jax Burd, Enbo Zhou and Brycen Westgarth
 - [x] Feature Detection: Points, Patches, Edges
   - Team: Mason Corey, Andrew Yung and Ryan Guajardo.
 - [x] Contour Tracing
   - Team: Zexi Liu, Kerr Ding and Zeben Wu
 - [ ] Image Segmentation
-  - Team: TBD
+  - Team: Roger Lin, Taian Song
 - [ ] Pairwise Alignment of Images
   - Team: Jack Tang and XXX.
 - [ ] 3D Reconstruction: Shape from X, Shape representations
