@@ -25,8 +25,18 @@ def main():
     if selected_box == 'Welcome':
         welcome()
 
+    if selected_box == 'Pinhole Camera Model':
+        pass
+
+    if selected_box == 'Paraxial Camera Model':
+        paraxial_camera_model()
+
     if selected_box == 'Homography':
         homography()
+
+    if selected_box == "Camera Intrinsics":
+        #camera_intrinsics()
+        pass
 
 
 def welcome():
