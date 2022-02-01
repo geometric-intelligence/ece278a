@@ -184,7 +184,7 @@ def paraxial_camera_model():
         ax2.plot(ray_obj_z, ray_obj_center, color='red', alpha=0.25)
         ax2.plot(ray_obj_z, ray_obj_bottom, color='red', alpha=0.25)
         ax2.set_xlim([0, zo * 1.25])
-        ax2.set_ylim([-d / 1.5, d / 1.5])
+        ax2.set_ylim([-25, 25])
         ax2.yaxis.set_label_position("right")
         ax2.yaxis.tick_right()
 
