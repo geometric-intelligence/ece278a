@@ -175,7 +175,7 @@ def paraxial_camera_model():
         ax1.plot(ray_img_z, ray_img_center, color='blue', alpha=0.25)
         ax1.plot(ray_img_z, ray_img_bottom, color='blue', alpha=0.25)
         ax1.set_xlim([-150, 0])
-        ax1.set_ylim([-d / 1.5, d / 1.5])
+        ax1.set_ylim([-25, 25])
 
         # object formation
         ax2.scatter(zo, yo, color='red', label='object')
