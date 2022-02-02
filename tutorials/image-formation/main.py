@@ -462,9 +462,19 @@ def camera_intrinsics():
              r'\begin {pmatrix} f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1 \end {pmatrix} '
              r'}_\text{Mf} \cdot'
              r'\underbrace{ '
-             r'\begin {pmatrix} r_{11} & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} '
-             r'}_\text{R \: t}'
+             r'\begin {pmatrix} r_{11} & r_{12} & r_{13} & t_{x} \\ r_{21} & r_{22} & r_{23} & t_{y} \\ r_{31} & r_{32} & r_{33} & t_{z} \end {pmatrix} '
+             r'}_\text{Rt}'
              r'\cdot \begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix} \right]')
+
+    st.subheader("Intrinsic camera parameters")
+    st.text("We finally define how x/y-coordinates on the image plane map to pixel \n"
+            "coordinates on the sensor (variable, \"u\").")
+    st.latex(r'\begin {pmatrix} u \\ v \end {pmatrix} = hom^{-1} \left['
+             r'\underbrace{ '
+             r'\begin {pmatrix} s_x & s_{\theta} & u_c \\ 0 & s_y & v_c \\ 0 & 0 & 1 \end {pmatrix} \cdot'
+             r'\begin {pmatrix} f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1 \end {pmatrix} '
+             r'}_\text{A}'
+             r'\cdot \begin {pmatrix} x \\ y \\ 1 \end {pmatrix} \right]')
 
     """begin
     {matrix}
