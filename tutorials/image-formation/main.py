@@ -100,7 +100,7 @@ def paraxial_camera_model():
             "an object ever be parallel to the lens?")
 
     st.text("2. Most real-world cameras (e.g. a laboratory microscope with a photographic \n "
-            "film) don't position the sensor exactly at the focal plane. Why is this ok?")
+            "film) don't position the sensor exactly at the focal plane. Why is this?")
 
     st.subheader("Toggles")
 
