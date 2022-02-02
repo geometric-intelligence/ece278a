@@ -480,6 +480,17 @@ def camera_intrinsics():
              r'\begin {pmatrix} \alpha & \gamma & u_c \\ 0 & \beta & v_c \\ 0 & 0 & 1 \end {pmatrix}')
     st.text(" is the intrinsic camera matrix.")
 
+    st.text("The complete perspective imaging transformation can now be written as ")
+    st.latex(r'\begin {pmatrix} u \\ v \end {pmatrix} = hom^{-1} \left['
+             r'\underbrace{ '
+             r'\begin {pmatrix} \alpha & \gamma & u_c \\ 0 & \beta & v_c \\ 0 & 0 & 1 \end {pmatrix}'
+             r'}_\text{A} \cdot'
+             r'\underbrace{ '
+             r'\begin {pmatrix} r_{11} & r_{12} & r_{13} & t_{x} \\ r_{21} & r_{22} & r_{23} & t_{y} \\ r_{31} & r_{32} & r_{33} & t_{z} \end {pmatrix} '
+             r'}_\text{Rt} \cdot'
+             r'\begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix} \right]')
+
+
     """begin
     {matrix}
     1 & 2 & 3\ 
