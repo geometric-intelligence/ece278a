@@ -80,7 +80,8 @@ def paraxial_camera_model():
     st.text("Consider a 3D point,")
     st.latex(r'p \: = \: [x, y, z,]^T')
 
-    st.text("The lens focuses light onto a sensor. There is a specific distance at which objects are 'in-focus'.")
+    st.text("The lens focuses light onto a sensor. There is a specific distance at which ")
+    st.text("objects are 'in-focus'.")
 
     pic_paraxial_camera_model = io.imread('tutorials/image-formation/paraxial_camera_model_pic.png')
     st.image(pic_paraxial_camera_model, use_column_width=True)
@@ -89,10 +90,17 @@ def paraxial_camera_model():
     st.latex(r' \acute p \: = \: [\acute x \quad \acute y]^T \: ='
              r' \: [(f + z_0)\frac{x}{z} \quad (f + z_0)\frac{y}{z}]^T')
 
-    st.text("In the paraxial refraction model, the lens focuses light rays that are parallel to the optical axes to "
-            "the focal point.")
+    st.text("In the paraxial refraction model, the lens focuses light rays that are parallel")
+    st.text("(to the optical axes) to the focal point.")
 
     st.subheader("Interactive Paraxial Refraction Camera Model")
+
+    st.subheader("Prompts to consider:")
+    st.text("1. Parallel rays are focused to the focal point but, when would rays from")
+    st.text("an object ever be parallel to the lens?")
+
+    st.text("2. Most real-world cameras (e.g. a laboratory microscope with a photographic")
+    st.text("film) don't position the sensor exactly at the focal plane. Why is this ok?")
 
 
     # optics
