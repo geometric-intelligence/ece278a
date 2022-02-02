@@ -73,6 +73,10 @@ def paraxial_camera_model():
     Author: Sean MacKenzie
     :return:
     """
+    # introduction
+    pic_paraxial_camera_model = io.imread('paraxial_camera_model_pic.png')
+    st.image(pic_paraxial_camera_model, use_column_width=True)
+
 
     # optics
     f = st.slider(label='Change camera lens focal length', min_value=50, max_value=200, value=100)
@@ -137,7 +141,7 @@ def paraxial_camera_model():
             ax.add_patch(add_lens_patch(width=width, height=d))
 
         # ccd
-        ax1.plot([ccd_z, ccd_z], [-ccd_h / 2, ccd_h / 2], color='black', linewidth=3, alpha=0.25, label='Sensor',
+        ax1.plot([ccd_z, ccd_z], [-ccd_h / 2, ccd_h / 2], color='black', linewidth=3, alpha=0.25, label='Film',
                  zorder=1.5)
 
         # focal plane
