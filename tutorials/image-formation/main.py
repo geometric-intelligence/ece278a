@@ -77,11 +77,18 @@ def paraxial_camera_model():
     st.title("Paraxial Refraction Model")
     st.subheader("A mapping from 3D objects points (the real world) to 2D image points (your iPhone screen)")
 
-    st.caption("Consider a 3D point,")
+    st.text("Consider a 3D point,")
     st.latex(r'p \: = \: [x, y, z,]^T')
+
+    st.text("The lens focuses light onto a sensor. There is a specific distance at which objects are 'in-focus'.")
 
     pic_paraxial_camera_model = io.imread('tutorials/image-formation/paraxial_camera_model_pic.png')
     st.image(pic_paraxial_camera_model, use_column_width=True)
+
+    st.text("The 3D to 2D projection defined by the paraxial refraction model is,")
+    st.latex(r'p^{\'} \: = \: [x^{\'} \quad y^{\'}]^T \: = \: [(f + z_0)\frac{x}{z} \quad (f + z_0)\frac{y}{z}]^T')
+    st.text("In the paraxial refraction model, the lens focuses light rays that are parallel to the optical axes to "
+            "the focal point.")
 
 
     # optics
