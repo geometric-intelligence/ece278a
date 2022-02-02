@@ -828,7 +828,7 @@ def camera_intrinsics():
     A = get_intrinsic_parameters(H_r)
 
     # print results
-    string_intrinsic = 'The intrinsic camera matrix is: \n {}'.format(np.round(A, 0))
+    string_intrinsic = 'The intrinsic camera matrix is: \n {:10.1f}'.format(np.round(A, 0))
     st.text(string_intrinsic)
     st.text("where ")
     st.latex(r'A = \begin {pmatrix} fs_x & fs_{\theta} & u_c \\ 0 & fs_y & v_c \\ 0 & 0 & 1 \end {pmatrix} ='
