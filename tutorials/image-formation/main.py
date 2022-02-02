@@ -229,12 +229,12 @@ def paraxial_camera_model():
         plt.show()
         st.pyplot(fig=fig)
 
-        return zi, yi, NA
+        return zi, yi, theta
 
-    zi, yi, NA = model_paraxial_lens(zo, yo, f, d, ccd_z, ccd_h)
+    zi, yi, theta = model_paraxial_lens(zo, yo, f, d, ccd_z, ccd_h)
 
     image_position_string = "Image height yi = {} at axial distance zi = {}".format(np.round(-yi, 2), np.round(-zi, 2))
-    numerical_aperture_string = "Viewing angle = {} degrees".format(np.round(NA * 360 / (2 * np.pi), 2))
+    numerical_aperture_string = "Viewing angle = {} degrees".format(np.round(theta * 360 / (2 * np.pi), 2))
 
     st.caption(body=image_position_string)
     st.caption(body=numerical_aperture_string)
