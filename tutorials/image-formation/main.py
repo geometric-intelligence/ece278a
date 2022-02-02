@@ -441,10 +441,13 @@ def camera_intrinsics():
             io.imsave('syn_chessboard_4x4_{}.tif'.format(image_number), image)
 
     def get_camera_images():
-        images = ['syn_chessboard_4x4_{}.tif'.format(each) for each in np.arange(1, 5)]
+        images = ['tutorials/image-formation/syn_chessboard_4x4_{}.tif'.format(each) for each in np.arange(1, 5)]
         images = sorted(images)
         for each in images:
             yield (each, cv.imread(each, 0))
+
+        # pic_paraxial_camera_model = io.imread('tutorials/image-formation/paraxial_camera_model_pic.png')
+        # st.image(pic_paraxial_camera_model, use_column_width=True)
 
     def getChessboardCorners(images=None, visualize=False):
         objp = np.zeros((pattern_dim[1] * pattern_dim[0], 3), dtype=np.float64)
