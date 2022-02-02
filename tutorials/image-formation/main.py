@@ -475,6 +475,10 @@ def camera_intrinsics():
              r'\begin {pmatrix} f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1 \end {pmatrix} '
              r'}_\text{A}'
              r'\cdot \begin {pmatrix} x \\ y \\ 1 \end {pmatrix} \right]')
+    st.text("where ")
+    st.latex(r'A = \begin {pmatrix} fs_x & fs_{\theta} & u_c \\ 0 & fs_y & v_c \\ 0 & 0 & 1 \end {pmatrix} ='
+             r'\begin {pmatrix} \alpha & \gamma & u_c \\ 0 & \beta & v_c \\ 0 & 0 & 1 \end {pmatrix}')
+    st.text(" is the intrinsic camera matrix.")
 
     """begin
     {matrix}
