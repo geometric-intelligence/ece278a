@@ -500,13 +500,7 @@ def camera_intrinsics():
     st.subheader("Camera calibration")
     st.text("We will calculate the intrinsic parameters using \"plane-based self calibration.\"")
 
-    """pic_cb_1 = io.imread('tutorials/image-formation/syn_chessboard_4x4_1.tif')
-    pic_cb_2 = io.imread('tutorials/image-formation/syn_chessboard_4x4_2.tif')
-    pic_cb_3 = io.imread('tutorials/image-formation/syn_chessboard_4x4_3.tif')
-    pic_cb_4 = io.imread('tutorials/image-formation/syn_chessboard_4x4_4.tif')
-    pic_chessboards = [pic_cb_1, pic_cb_2, pic_cb_3, pic_cb_4]"""
-
-    fig, [ax1, ax2, ax3, ax4] = plt.subplots(ncols=4, figsize=(13, 3))
+    fig, [ax1, ax2, ax3, ax4] = plt.subplots(ncols=4, figsize=(13, 3.5))
     for i, ax in enumerate([ax1, ax2, ax3, ax4]):
         pic_cb = io.imread('tutorials/image-formation/syn_chessboard_4x4_{}.tif'.format(i + 1))
         ax.imshow(pic_cb)
@@ -519,9 +513,8 @@ def camera_intrinsics():
 
     st.subheader("Toggles")
 
-    num_images = st.slider(label='Change number of calibration images', min_value=2, max_value=4, value=3)
-
-
+    num_images = st.slider(label='Change number of calibration images used to compute the intrinsic parameters.',
+                           min_value=2, max_value=4, value=3)
 
     # calculate camera intrinsic parameters
 
@@ -833,6 +826,9 @@ def camera_intrinsics():
         H_r.append(h_opt)
 
     A = get_intrinsic_parameters(H_r)
+
+    string_intrinsic = 'The intrinsic camera matrix is: \n {}'.format(A)
+    st.text(string_intrinsic)
 
 
 if __name__ == "__main__":
