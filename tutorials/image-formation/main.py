@@ -137,11 +137,11 @@ def paraxial_camera_model():
             ax.add_patch(add_lens_patch(width=width, height=d))
 
         # ccd
-        ax1.plot([ccd_z, ccd_z], [-ccd_h / 2, ccd_h / 2], color='black', linewidth=3, alpha=0.25, label='CCD',
+        ax1.plot([ccd_z, ccd_z], [-ccd_h / 2, ccd_h / 2], color='black', linewidth=3, alpha=0.25, label='Sensor',
                  zorder=1.5)
 
         # focal plane
-        ax1.plot([-f, -f], [-ccd_h / 2, ccd_h / 2], color='black', linestyle='--', alpha=0.125, label='focal plane')
+        ax1.plot([-f, -f], [-ccd_h / 2, ccd_h / 2], color='black', linestyle='--', alpha=0.125, label='Focal Plane')
 
         # initialize
         counter = 0
@@ -234,7 +234,10 @@ def paraxial_camera_model():
 
         return zi, yi, theta
 
-    yoi = np.linspace(np.min(yo), np.max(yo), yo_num)
+    if yo_num == 1:
+        yoi = np.mean(yo)
+    else:
+        yoi = np.linspace(np.min(yo), np.max(yo), yo_num)
     zi, yi, theta = model_paraxial_lens(zo, yoi, f, d, ccd_z, ccd_h)
 
     image_position_string = "Image height yi = {} at axial distance zi = {}".format(np.round(-yi, 2), np.round(-zi, 2))
