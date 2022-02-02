@@ -86,8 +86,7 @@ def paraxial_camera_model():
     st.image(pic_paraxial_camera_model, use_column_width=True)
 
     st.text("The 3D to 2D projection defined by the paraxial refraction model is,")
-    st.latex(r' \'p \: = ')
-    st.latex(r'\: [\'x \quad \'y]^T \: = ')
+    st.latex(r' \acute p \: = \: [\acute x \quad \acute y]^T \: = ')
     st.latex(r'= \: [(f + z_0)\frac{x}{z} \quad (f + z_0)\frac{y}{z}]^T')
 
     st.text("In the paraxial refraction model, the lens focuses light rays that are parallel to the optical axes to "
