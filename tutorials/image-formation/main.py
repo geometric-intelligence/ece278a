@@ -833,6 +833,7 @@ def camera_intrinsics():
     st.text("where ")
     st.latex(r'A = \begin {pmatrix} fs_x & fs_{\theta} & u_c \\ 0 & fs_y & v_c \\ 0 & 0 & 1 \end {pmatrix} ='
              r'\begin {pmatrix} \alpha & \gamma & u_c \\ 0 & \beta & v_c \\ 0 & 0 & 1 \end {pmatrix}')
+    st.text("where alpha and beta are scale factor in image u and v axes and gamma describes the skew.")
 
     st.text("Once the intrinsic parameters are known, the extrinsic parameters can be calculated for each\n"
             "image (view) using the corresponding homography, H.")
