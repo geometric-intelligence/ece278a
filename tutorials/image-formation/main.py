@@ -1,10 +1,16 @@
 # notes
+"""
+Created on Wed Feb 2 12:00:00 2022
+
+@author: sean mackenzie, rami dabit, and peter li
+"""
 
 # imports
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageFilter, ImageEnhance
 import cv2 as cv
 import numpy as np
+import scipy.ndimage
 
 from skimage import data, util, io
 from skimage.exposure import rescale_intensity
@@ -20,6 +26,7 @@ from matplotlib.gridspec import GridSpec
 from matplotlib import patches
 import requests
 from io import BytesIO
+import urllib
 
 
 def main():
@@ -33,7 +40,7 @@ def main():
         welcome()
 
     if selected_box == 'Pinhole Camera Model':
-        pass
+        pinhole_camera_model()
 
     if selected_box == 'Paraxial Camera Model':
         paraxial_camera_model()
@@ -46,11 +53,12 @@ def main():
 
 
 def welcome():
-    st.title('Hi there, welcome to our web app')
+    st.title('Hi there, welcome to our web app on Image Formation!')
 
-    st.subheader('ECE 278A Digital Image Processing @UCSB')
-    st.subheader('Team: Sean MacKenzie, Rami Dabit and Peter Li.')
-    st.subheader('Feel free to interact with our web app.')
+    st.subheader('ECE 278A: Digital Image Processing')
+    st.subheader('University of California, Santa Barbara')
+    st.subheader('Sean MacKenzie, Rami Dabit, and Peter Li')
+    st.subheader('Feel free to interact with our web app. :)')
 
     # st.image('hackershrine.jpg',use_column_width=True)
 
@@ -60,12 +68,113 @@ def load_image(filename):
     return image
 
 
+# One-time preprocessing for pinhole camera model
+# Download images to avoid doing so repetitively
+urllib.request.urlretrieve("https://i.imgur.com/MHlfq0o.png", "subj.png")
+url_bg = "https://wallpapercave.com/wp/JYodMo6.jpg"
+response_bg = requests.get(url_bg)
+dataBytesIO_bg = BytesIO(response_bg.content)
+bg = Image.open(dataBytesIO_bg)
+# One-time preprocessing
+subj_w_bg = cv.imread("subj.png", 1)
+temp = cv.cvtColor(subj_w_bg, cv.COLOR_BGR2GRAY)
+_, alpha = cv.threshold(temp, 0, 255, cv.THRESH_BINARY)
+b, g, r = cv.split(subj_w_bg)
+rgba = [b, g, r, alpha]
+dest = cv.merge(rgba, 4)
+cv.imwrite("pinhole_temp.png", dest)
+subj = Image.open("pinhole_temp.png")
+
+# Helper function to simulate real-world camera capture
+def capture(background, subject, val, focus):
+    # Blur background/foreground to simulate a change in focus
+    if focus == 0:
+        background = background.filter(ImageFilter.GaussianBlur(radius=val))
+    else:
+        subject = subject.filter(ImageFilter.GaussianBlur(radius=val))
+
+    # Horizontal and vertical spacing with bicubic resampling
+    #img.thumbnail((400, 400), resample=Image.BICUBIC)
+
+    # Convert images to RGBA
+    subj1 = subject.convert("RGBA")
+    bg1 = background.convert("RGBA")
+    # Center our gaucho image along the background
+    width = (bg1.width - subj1.width) // 2
+    height = (bg1.height - subj1.height) // 2
+    # Paste gaucho at the center
+    bg1.paste(subj1, (width, height), subj1)
+    bg1.save("merged.png", format="png")
+    # Reopen the merged ('faux capture') image
+    return Image.open("merged.png")
+
 def pinhole_camera_model():
     """
     Author: Rami Dabit
     :return:
     """
-    pass
+    st.title("Pinhole Camera Model: Sensor View")
+
+    x = st.slider('Adjust the camera aperature (f-number)',min_value=2,max_value=64,value=16)
+    f = st.slider('Adjust the focal length of the lens (mm)',min_value=10,max_value=300,value=50)
+
+    foc = st.radio(
+        "Focus select",
+        ('Foreground','Background'))
+    if foc == 'Foreground':
+        image = capture(bg,subj,65-x,0)
+    else:
+        image = capture(bg,subj,65-x,1)
+
+    width, height = image.size
+    # If we zoom in while keeping the aperture constant, the background becomes more blurred.
+
+    if f < 35:
+        k_1 = 0.4
+        k_2 = 0.1
+
+        # Meshgrid for interpolation mapping
+        x,y = np.meshgrid(np.float32(np.arange(width)),np.float32(np.arange(height)))
+
+        # Center and scale grid for radius calculation
+        x_c = width/2 
+        y_c = height/2 
+        x = x - x_c
+        y = y - y_c
+        x = x / x_c
+        y = y / y_c
+        radius = np.sqrt(x**2 + y**2)
+
+        # Radial distortion model
+        m_r = 1 + k_1*radius + k_2*radius**2
+        # Apply model
+        x= x * m_r
+        y = y * m_r
+        # Reset shifts
+        x = x*x_c + x_c
+        y = y*y_c + y_c
+
+        image = np.asarray(image)
+        distorted = np.zeros(image.shape)
+        distorted0 = scipy.ndimage.map_coordinates(image[:,:,0], [y.ravel(),x.ravel()])
+        distorted1 = scipy.ndimage.map_coordinates(image[:,:,1], [y.ravel(),x.ravel()])
+        distorted2 = scipy.ndimage.map_coordinates(image[:,:,2], [y.ravel(),x.ravel()])
+        distorted3 = scipy.ndimage.map_coordinates(image[:,:,3], [y.ravel(),x.ravel()])
+
+        distorted = np.dstack((distorted2, distorted1, distorted0, distorted3))
+        distorted.resize(image.shape)
+
+        cv.imwrite("distorted.png",distorted)
+        image = Image.open("distorted.png")
+    
+    image = image.crop((2*f, 0, width-2*f, height-np.floor(3*f/2)))
+
+    eso = st.slider('Adjust camera exposure (ESO)',min_value=0.0,max_value=2.0,value=1.0)
+    enhancer = ImageEnhance.Brightness(image)
+    image = enhancer.enhance(eso)
+
+    image.save("res_img.png", format="png")
+    st.image(Image.open("res_img.png"), use_column_width=True,clamp = True)
 
 
 def paraxial_camera_model():
@@ -287,7 +396,7 @@ def homography():
     Author: Peter Li
     :return:
     """
-    st.header("Image-Formation: Homography")
+    st.title("Image Formation: Homography")
 
     # ========================================================
     # my own start
