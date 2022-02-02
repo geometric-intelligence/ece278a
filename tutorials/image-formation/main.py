@@ -500,11 +500,11 @@ def camera_intrinsics():
     st.subheader("Camera calibration")
     st.text("We will calculate the intrinsic parameters using \"plane-based self calibration.\"")
 
-    pic_cb_1 = io.imread('tutorials/image-formation/syn_chessboard_4x4_1.tif')
+    """pic_cb_1 = io.imread('tutorials/image-formation/syn_chessboard_4x4_1.tif')
     pic_cb_2 = io.imread('tutorials/image-formation/syn_chessboard_4x4_2.tif')
     pic_cb_3 = io.imread('tutorials/image-formation/syn_chessboard_4x4_3.tif')
     pic_cb_4 = io.imread('tutorials/image-formation/syn_chessboard_4x4_4.tif')
-    pic_chessboards = [pic_cb_1, pic_cb_2, pic_cb_3, pic_cb_4]
+    pic_chessboards = [pic_cb_1, pic_cb_2, pic_cb_3, pic_cb_4]"""
 
     fig, [ax1, ax2, ax3, ax4] = plt.subplots(ncols=4)
     for i, ax in enumerate([ax1, ax2, ax3, ax4]):
@@ -514,7 +514,7 @@ def camera_intrinsics():
         ax.set_title('Image #1')
     plt.title("Plane-based self calibration using chessboards")
     plt.show()
-    st.image(pic_paraxial_camera_model, use_column_width=True)
+    st.pyplot(fig=fig)
 
 
     st.subheader("Toggles")
