@@ -439,7 +439,17 @@ def camera_intrinsics():
              r'}_\text{Mp}'
              r'\cdot \begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix}')
 
-    st.latex(r'\underbrace{Mpppp}_\text{h}')
+    st.text("The projection matrix M_P can be decomposed into two matrices M_f and M_0,")
+    st.latex(r'Mp = '
+             r'\underbrace{ '
+             r'\begin {pmatrix} f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1 \end {pmatrix} '
+             r'}_\text{Mf}'
+             r'\cdot '
+             r'\underbrace{ '
+             r'\begin {pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} '
+             r'}_\text{Mo}'
+             r'= Mf \cdot Mo'
+             )
 
     """begin
     {matrix}
