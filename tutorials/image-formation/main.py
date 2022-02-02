@@ -74,7 +74,7 @@ def paraxial_camera_model():
     :return:
     """
     # introduction
-    pic_paraxial_camera_model = io.imread('paraxial_camera_model_pic.png')
+    pic_paraxial_camera_model = io.imread('tutorials/image-formation/paraxial_camera_model_pic.png')
     st.image(pic_paraxial_camera_model, use_column_width=True)
 
 
