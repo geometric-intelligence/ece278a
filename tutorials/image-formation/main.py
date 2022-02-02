@@ -75,7 +75,7 @@ def paraxial_camera_model():
     """
     # introduction
     st.title("Paraxial Refraction Model")
-    st.subheader("A mapping from 3D objects points (the real world) to 2D image points (your iPhone screen)")
+    st.subheader("An ideal mapping from 3D objects points (the real world) to 2D image points (your iPhone screen)")
 
     st.text("Consider a 3D point,")
     st.latex(r'p \: = \: [x, y, z,]^T')
@@ -89,6 +89,7 @@ def paraxial_camera_model():
     st.text("The 3D to 2D projection defined by the paraxial refraction model is,")
     st.latex(r' \acute p \: = \: [\acute x \quad \acute y]^T \: ='
              r' \: [(f + z_0)\frac{x}{z} \quad (f + z_0)\frac{y}{z}]^T')
+    st.caption("Note: these are inhomogeneous coordinates.")
 
     st.text("In the paraxial refraction model, the lens focuses light rays that are parallel \n"
             "(to the optical axes) to the focal point.")
@@ -395,6 +396,68 @@ def camera_intrinsics():
     :return:
     """
 
+    # introduction
+    st.title("Camera Intrinsic Parameters")
+    st.subheader("A mapping from 3D objects points (the real world) to 2D image points (your iPhone screen)")
+
+    st.subheader("Refining the idealized paraxial model for a real camera (including optical distortions)")
+    st.caption("Note: Optical distortions (non-idealized lens) motivate the need for camera calibration, \n"
+               "however, we do not investigate optical distortions here.")
+
+    st.text("An accurate model of the image projection parameters for a real optical system is \n"
+            "necessary for quantitative geometric measurement in computer vision applications.")
+    st.caption("An example application is the Microsoft Kinect for movement tracking.")
+    st.text("In order to develop an accurate camera model, we must calibrate the camera.")
+
+    # setup the camera model: inhomogeneous coordinates
+    st.subheader("Camera model: inhomogeneous coordinates")
+    st.text("Again, consider a 3D point,")
+    st.latex(r'p \: = \: [x, y, z,]^T')
+
+    st.text("The lens focuses light onto a sensor. There is a specific distance at which \n"
+            "objects are 'in-focus'.")
+
+    pic_paraxial_camera_model = io.imread('tutorials/image-formation/paraxial_camera_model_pic.png')
+    st.image(pic_paraxial_camera_model, use_column_width=True)
+
+    st.text("The 3D to 2D projection defined by the paraxial refraction model is,")
+    st.latex(r' \acute p \: = \: [\acute x \quad \acute y]^T \: ='
+             r' \: [(f + z_0)\frac{x}{z} + c_x \quad (f + z_0)\frac{y}{z} + c_y]^T')
+    st.text("where c_x and c_y describe how image plane and digital image coordinates differ \n"
+            "by a translation.")
+    st.caption("Note: these are inhomogeneous coordinates. They describe the nonlinear \n"
+               "transformations in the domain of Cartesian coordinates.")
+
+    # setup the camera model: homogeneous coordinates
+    st.subheader("Camera model: homogeneous coordinates")
+    st.text("We rewrite the perspective transformation as a linear matrix equation.")
+    st.latex(r'\begin {matrix} x \ y \end {matrix}')
+
+    """begin
+    {matrix}
+    1 & 2 & 3\ 
+            a & b & c
+    \end
+    {matrix}"""
+
+    st.text("In the paraxial refraction model, the lens focuses light rays that are parallel \n"
+            "(to the optical axes) to the focal point.")
+
+    st.header("Interactive Paraxial Refraction Camera Model")
+
+    st.subheader("Prompts to consider:")
+    st.text("1. Parallel rays are focused to the focal point but, when would rays from \n"
+            "an object ever be parallel to the lens?")
+
+    st.text("2. Most real-world cameras (e.g. a laboratory microscope with a photographic \n "
+            "film) don't position the sensor exactly at the focal plane. Why is this?")
+
+    st.subheader("Toggles")
+
+
+
+    # calculate camera intrinsic parameters
+
     # chessboard pattern and size
     pattern_dim = (4, 5)
     square_dim = 1.0
@@ -446,9 +509,6 @@ def camera_intrinsics():
         for each in images:
             yield (each, cv.imread(each, 0))
 
-        # pic_paraxial_camera_model = io.imread('tutorials/image-formation/paraxial_camera_model_pic.png')
-        # st.image(pic_paraxial_camera_model, use_column_width=True)
-
     def getChessboardCorners(images=None, visualize=False):
         objp = np.zeros((pattern_dim[1] * pattern_dim[0], 3), dtype=np.float64)
         objp[:, :2] = np.indices(pattern_dim).T.reshape(-1, 2)
@@ -458,24 +518,19 @@ def camera_intrinsics():
         image_points = []
         object_points = []
         correspondences = []
-        ctr = 0
+        counter = 0
         for (path, each) in get_camera_images():  # images:
-            print("Processing Image : ", path)
-            print(each.shape)
-            print(np.max(each))
 
             if np.mean(each) < np.max(each // 2):
                 each = cv.bitwise_not(each)
 
             ret, corners = cv.findChessboardCorners(each, patternSize=pattern_dim)
             if ret:
-                print("Chessboard Detected ")
                 corners = corners.reshape(-1, 2)
 
                 if corners.shape[0] == objp.shape[0]:
                     image_points.append(corners)
-                    object_points.append(objp[:,
-                                         :-1])  # append only World_X, World_Y. Because World_Z is ZERO. Just a simple modification for get_normalization_matrix
+                    object_points.append(objp[:, :-1])
                     assert corners.shape == objp[:, :-1].shape, "mismatch shape corners and objp[:,:-1]"
                     correspondences.append([corners.astype(int), objp[:, :-1].astype(int)])
 
@@ -490,9 +545,9 @@ def camera_intrinsics():
                     plt.show()
                     st.image(ec, use_column_width=True)
             else:
-                print("Error in detection points", ctr)
+                print("Error in detection points: ", counter)
 
-            ctr += 1
+            counter += 1
 
         return correspondences
 
@@ -510,16 +565,9 @@ def camera_intrinsics():
         N_x_inv = correspondence[7]
 
         N = len(image_points)
-        print("Number of points in current view : ", N)
-
         M = np.zeros((2 * N, 9), dtype=np.float64)
-        print("Shape of Matrix M : ", M.shape)
-
-        print("N_model\n", N_x)
-        print("N_observed\n", N_u)
 
         # create row wise allotment for each 0-2i rows
-        # that means 2 rows..
         for i in range(N):
             X, Y = normalized_object_points[i]  # A
             u, v = normalized_image_points[i]  # B
@@ -529,23 +577,11 @@ def camera_intrinsics():
             M[2 * i] = row_1
             M[(2 * i) + 1] = row_2
 
-            print("p_model {0} \t p_obs {1}".format((X, Y), (u, v)))
-
         # M.h  = 0 . solve system of linear equations using SVD
         u, s, vh = np.linalg.svd(M)
-        #print("Computing SVD of M")
-        #print("U : Shape {0} : {1}".format(u.shape, u))
-        #print("S : Shape {0} : {1}".format(s.shape, s))
-        #print("V_t : Shape {0} : {1}".format(vh.shape, vh))
-        #print(s, np.argmin(s))
 
         h_norm = vh[np.argmin(s)]
         h_norm = h_norm.reshape(3, 3)
-
-        print("Normalized Homography Matrix : \n", h_norm)
-
-        #print(N_u_inv)
-        #print(N_x)
 
         # h = h_norm
         h = np.matmul(np.matmul(N_u_inv, h_norm), N_x)
@@ -553,19 +589,8 @@ def camera_intrinsics():
         # if abs(h[2, 2]) > 10e-8:
         h = h[:, :] / h[2, 2]
 
+        # print("Normalized Homography Matrix for View : \n", h_norm)
         # print("Homography for View : \n", h)
-
-        if reproj:
-            reproj_error = 0
-            for i in range(len(image_points)):
-                t1 = np.array([[object_points[i][0]], [object_points[i][1]], [1.0]])
-                t = np.matmul(h, t1).reshape(1, 3)
-                t = t / t[0][-1]
-                formatstring = "Imp {0} | ObjP {1} | Tx {2}".format(image_points[i], object_points[i], t)
-                print(formatstring)
-                reproj_error += np.sum(np.abs(image_points[i] - t[0][:-1]))
-            reproj_error = np.sqrt(reproj_error / N) / 100.0
-            print("Reprojection error : ", reproj_error)
 
         return h
 
@@ -576,13 +601,8 @@ def camera_intrinsics():
             pts = pts.astype(np.float64)
             x_mean, y_mean = np.mean(pts, axis=0)
             var_x, var_y = np.var(pts, axis=0)
-
             s_x, s_y = np.sqrt(2 / var_x), np.sqrt(2 / var_y)
-
-            # print("Matrix: {4} : meanx {0}, meany {1}, varx {2}, vary {3}, sx {5}, sy {6} ".format(x_mean, y_mean, var_x, var_y, name, s_x, s_y))
-
             n = np.array([[s_x, 0, -s_x * x_mean], [0, s_y, -s_y * y_mean], [0, 0, 1]])
-            # print(n)
 
             n_inv = np.array([[1. / s_x, 0, x_mean], [0, 1. / s_y, y_mean], [0, 0, 1]])
             return n.astype(np.float64), n_inv.astype(np.float64)
@@ -619,10 +639,14 @@ def camera_intrinsics():
         return ret_correspondences
 
     def minimizer_func(initial_guess, X, Y, h, N):
-        # X : normalized object points flattened
-        # Y : normalized image points flattened
-        # h : homography flattened
-        # N : number of points
+        """
+        :param initial_guess:
+        :param X:  normalized object points flattened
+        :param Y:  normalized image points flattened
+        :param h:  homography flattened
+        :param N:  number of points
+        :return:
+        """
 
         x_j = X.reshape(N, 2)
         # Y = Y.reshape(N, 2)
@@ -701,9 +725,7 @@ def camera_intrinsics():
         u, s, vh = np.linalg.svd(V)
         b = vh[np.argmin(s)]
 
-        # print("V.b = 0 Solution : ", b.shape)
-
-        # according to zhangs method
+        # according to Zhang's method
         vc = (b[1] * b[3] - b[0] * b[4]) / (b[0] * b[2] - b[1] ** 2)
         l = b[5] - (b[3] ** 2 + vc * (b[1] * b[2] - b[0] * b[4])) / b[0]
         alpha = np.sqrt((l / b[0]))
@@ -736,7 +758,7 @@ def camera_intrinsics():
 
     H = []
     for correspondence in chessboard_correspondences_normalized:
-        H.append(compute_view_based_homography(correspondence, reproj=0))
+        H.append(compute_view_based_homography(correspondence, reproj=False))
 
     H_r = []
     for i in range(len(H)):
@@ -744,10 +766,6 @@ def camera_intrinsics():
         H_r.append(h_opt)
 
     A = get_intrinsic_parameters(H_r)
-
-
-
-
 
 
 if __name__ == "__main__":
