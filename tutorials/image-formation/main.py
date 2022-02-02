@@ -434,7 +434,7 @@ def camera_intrinsics():
     st.latex(r'\begin {pmatrix} x \\ y \end {pmatrix} \equiv '
              r'\begin {pmatrix} fX/Z \\ fY/Z \\ 1 \end {pmatrix} \equiv'
              r'\begin {pmatrix} fX \\ fY \\ Z \end {pmatrix}  ='
-             r'\underbrace{ \begin {pmatrix} f & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} }_\text{M_p}'
+             r'\underbrace{ \begin {pmatrix} f & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} }_\text{M}'
              r'\cdot \begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix}')
 
     st.latex(r'\underbrace{Mpppp}_\text{h}')
