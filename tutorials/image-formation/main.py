@@ -495,16 +495,31 @@ def camera_intrinsics():
             "the extrinsic parameters describe the projection transformation between the world and \n"
             "sensor coordinate axes.")
 
-    st.header("Interactive Paraxial Refraction Camera Model")
+    st.header("Demonstration of Camera Intrinsic Parameters")
 
-    st.subheader("Prompts to consider:")
-    st.text("1. Parallel rays are focused to the focal point but, when would rays from \n"
-            "an object ever be parallel to the lens?")
+    st.subheader("Camera calibration")
+    st.text("We will calculate the intrinsic parameters using \"plane-based self calibration.\"")
 
-    st.text("2. Most real-world cameras (e.g. a laboratory microscope with a photographic \n "
-            "film) don't position the sensor exactly at the focal plane. Why is this?")
+    pic_cb_1 = io.imread('tutorials/image-formation/syn_chessboard_4x4_1.tif')
+    pic_cb_2 = io.imread('tutorials/image-formation/syn_chessboard_4x4_2.tif')
+    pic_cb_3 = io.imread('tutorials/image-formation/syn_chessboard_4x4_3.tif')
+    pic_cb_4 = io.imread('tutorials/image-formation/syn_chessboard_4x4_4.tif')
+    pic_chessboards = [pic_cb_1, pic_cb_2, pic_cb_3, pic_cb_4]
+
+    fig, [ax1, ax2, ax3, ax4] = plt.subplots(ncols=4)
+    for i, ax in enumerate([ax1, ax2, ax3, ax4]):
+        pic_cb = io.imread('tutorials/image-formation/syn_chessboard_4x4_{}.tif'.format(i + 1))
+        ax.imshow(pic_cb)
+        ax.axis('off')
+        ax.set_title('Image #1')
+    plt.title("Plane-based self calibration using chessboards")
+    plt.show()
+    st.image(pic_paraxial_camera_model, use_column_width=True)
+
 
     st.subheader("Toggles")
+
+    num_images = st.slider(label='Change number of calibration images', min_value=2, max_value=4, value=3)
 
 
 
@@ -555,13 +570,13 @@ def camera_intrinsics():
         if save_image:
             io.imsave('syn_chessboard_4x4_{}.tif'.format(image_number), image)
 
-    def get_camera_images():
-        images = ['tutorials/image-formation/syn_chessboard_4x4_{}.tif'.format(each) for each in np.arange(1, 5)]
+    def get_camera_images(num_images=4):
+        images = ['tutorials/image-formation/syn_chessboard_4x4_{}.tif'.format(each) for each in np.arange(1, num_images + 1)]
         images = sorted(images)
         for each in images:
             yield (each, cv.imread(each, 0))
 
-    def getChessboardCorners(images=None, visualize=False):
+    def getChessboardCorners(images=None, visualize=False, num_images=4):
         objp = np.zeros((pattern_dim[1] * pattern_dim[0], 3), dtype=np.float64)
         objp[:, :2] = np.indices(pattern_dim).T.reshape(-1, 2)
         objp *= square_dim
@@ -571,7 +586,7 @@ def camera_intrinsics():
         object_points = []
         correspondences = []
         counter = 0
-        for (path, each) in get_camera_images():  # images:
+        for (path, each) in get_camera_images(num_images=num_images):  # images:
 
             if np.mean(each) < np.max(each // 2):
                 each = cv.bitwise_not(each)
@@ -801,7 +816,7 @@ def camera_intrinsics():
         print(A)
         return A
 
-    chessboard_correspondences = getChessboardCorners(images=None, visualize=True)
+    chessboard_correspondences = getChessboardCorners(images=None, visualize=True, num_images=num_images)
 
     chessboard_correspondences_normalized = normalize_points(chessboard_correspondences)
 
