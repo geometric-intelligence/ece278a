@@ -506,7 +506,7 @@ def camera_intrinsics():
     pic_cb_4 = io.imread('tutorials/image-formation/syn_chessboard_4x4_4.tif')
     pic_chessboards = [pic_cb_1, pic_cb_2, pic_cb_3, pic_cb_4]"""
 
-    fig, [ax1, ax2, ax3, ax4] = plt.subplots(ncols=4)
+    fig, [ax1, ax2, ax3, ax4] = plt.subplots(ncols=4, figsize=(13, 3))
     for i, ax in enumerate([ax1, ax2, ax3, ax4]):
         pic_cb = io.imread('tutorials/image-formation/syn_chessboard_4x4_{}.tif'.format(i + 1))
         ax.imshow(pic_cb)
