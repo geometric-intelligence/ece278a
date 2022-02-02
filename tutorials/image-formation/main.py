@@ -440,7 +440,7 @@ def camera_intrinsics():
              r'\cdot \begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix}')
     st.caption("Note: here, we first formulate a projection matrix for an ideal camera.")
 
-    st.text("The projection matrix M_P can be decomposed into two matrices M_f and M_0,")
+    st.text("The projection matrix Mp can be decomposed into two matrices Mf and Mo,")
     st.latex(r'Mp = '
              r'\underbrace{ '
              r'\begin {pmatrix} f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1 \end {pmatrix} '
@@ -451,19 +451,20 @@ def camera_intrinsics():
              r'}_\text{Mo}'
              r'= Mf \cdot Mo'
              )
-    st.text("where M_f models the camera lens and M_0 describes the transformation from \n"
+    st.text("where Mf models the camera lens and Mo describes the transformation from \n"
             "camera coordinates to real world coordinates when the object is positioned \n"
             "along the optical axis.")
 
     st.text("If the object is not positioned along the optical axis, the camera observes \n"
             "3D that were subjected to rigid body motion. This is formulated as,")
-    st.latex(r'\begin {pmatrix} x \\ y \end {pmatrix} = hom^{-1} '
-             r'\begin {pmatrix} fX/Z \\ fY/Z \\ 1 \end {pmatrix} \equiv'
-             r'\begin {pmatrix} fX \\ fY \\ Z \end {pmatrix}  ='
+    st.latex(r'\begin {pmatrix} x \\ y \end {pmatrix} = hom^{-1} \left['
              r'\underbrace{ '
-             r'\begin {pmatrix} f & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} '
-             r'}_\text{Mp}'
-             r'\cdot \begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix}')
+             r'\begin {pmatrix} f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1 \end {pmatrix} '
+             r'}_\text{Mf} \cdot'
+             r'\underbrace{ '
+             r'\begin {pmatrix} r_{11} & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} '
+             r'}_\text{R \: t}'
+             r'\cdot \begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix} \right]')
 
     """begin
     {matrix}
