@@ -143,8 +143,10 @@ def paraxial_camera_model():
         # focal plane
         ax1.plot([-f, -f], [-ccd_h / 2, ccd_h / 2], color='black', linestyle='--', alpha=0.125, label='focal plane')
 
-        # counter: rays intersecting ccd
+        # initialize
         counter = 0
+        yo_i_i = 0
+        yi_i = 0
 
         for i, yo_i in enumerate(yo):
 
@@ -192,13 +194,13 @@ def paraxial_camera_model():
                 ax2.scatter(zo, yo_i, color='red')
 
             # image formation
-            ax1.plot([zi, zi], [0, yi], color='blue', linestyle=':', linewidth=2)
+            ax1.plot([zi, zi], [yi_i, yi], color='blue', linestyle=':', linewidth=2)
             ax1.plot(ray_img_z, ray_img_top, color='blue', alpha=0.25)
             ax1.plot(ray_img_z, ray_img_center, color='blue', alpha=0.25)
             ax1.plot(ray_img_z, ray_img_bottom, color='blue', alpha=0.25)
 
             # object formation
-            ax2.plot([zo, zo], [0, yo_i], color='red', linestyle=':', linewidth=2)
+            ax2.plot([zo, zo], [yo_i_i, yo_i], color='red', linestyle=':', linewidth=2)
             ax2.plot(ray_obj_z, ray_obj_top, color='red', alpha=0.25)
             ax2.plot(ray_obj_z, ray_obj_center, color='red', alpha=0.25)
             ax2.plot(ray_obj_z, ray_obj_bottom, color='red', alpha=0.25)
