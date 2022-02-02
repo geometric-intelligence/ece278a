@@ -84,7 +84,7 @@ def paraxial_camera_model():
 
     # object
     zo = st.slider(label='Change object distance', min_value=100, max_value=10000, value=500)
-    yo = st.slider(label='Change object height', min_value=-20, max_value=20, value=-15)
+    yo = st.slider(label='Change object height', min_value=-20, max_value=20, value=(-15, -16))
 
     def model_pinhole(zo, yo, zi):
         yi = zi * yo / zo
