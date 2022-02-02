@@ -511,8 +511,8 @@ def camera_intrinsics():
         pic_cb = io.imread('tutorials/image-formation/syn_chessboard_4x4_{}.tif'.format(i + 1))
         ax.imshow(pic_cb)
         ax.axis('off')
-        ax.set_title('Image #1')
-    plt.title("Plane-based self calibration using chessboards")
+        ax.set_title('Image #1', fontsize=10)
+    plt.suptitle("Plane-based self calibration using chessboards")
     plt.show()
     st.pyplot(fig=fig)
 
