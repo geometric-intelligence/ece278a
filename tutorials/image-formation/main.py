@@ -600,10 +600,10 @@ def camera_intrinsics():
                     cv.drawChessboardCorners(ec, pattern_dim, corners, ret)
 
                     # to show via skimage
-                    fig, ax = plt.subplots()
+                    fig, ax = plt.subplots(figsize=(4,4))
                     ax.imshow(ec)
                     plt.show()
-                    st.image(ec, use_column_width=True)
+                    st.image(ec, use_column_width=False)
             else:
                 print("Error in detection points: ", counter)
 
@@ -827,8 +827,12 @@ def camera_intrinsics():
 
     A = get_intrinsic_parameters(H_r)
 
+    # print results
     string_intrinsic = 'The intrinsic camera matrix is: \n {}'.format(A)
     st.text(string_intrinsic)
+    st.text("where ")
+    st.latex(r'A = \begin {pmatrix} fs_x & fs_{\theta} & u_c \\ 0 & fs_y & v_c \\ 0 & 0 & 1 \end {pmatrix} ='
+             r'\begin {pmatrix} \alpha & \gamma & u_c \\ 0 & \beta & v_c \\ 0 & 0 & 1 \end {pmatrix}')
 
 
 if __name__ == "__main__":
