@@ -92,6 +92,8 @@ def paraxial_camera_model():
     st.text("In the paraxial refraction model, the lens focuses light rays that are parallel to the optical axes to "
             "the focal point.")
 
+    st.subheader("Interactive Paraxial Refraction Camera Model")
+
 
     # optics
     f = st.slider(label='Change camera lens focal length', min_value=50, max_value=200, value=100)
@@ -236,16 +238,19 @@ def paraxial_camera_model():
         # figure formatting
         ax1.set_xlim([-150, 0])
         ax1.set_ylim([-25, 25])
+        ax1.tick_params(axis='both', Labelsize=14)
+        ax1.set_xlabel(r'Distance $_{image \: plane}$', fontsize=18)
+        ax1.set_ylabel('Height', fontsize=18)
+
         ax2.set_xlim([0, zo * 1.25])
-        ax1.set_xlabel(r'Distance $_{image \: plane}$', fontsize=14)
-        ax1.set_ylabel('Height', fontsize=14)
         ax2.set_ylim([-25, 25])
         ax2.yaxis.set_label_position("right")
         ax2.yaxis.tick_right()
-        ax2.set_xlabel(r'Distance $_{object \: plane}$', fontsize=14)
+        ax2.tick_params(axis='both', Labelsize=14)
+        ax2.set_xlabel(r'Distance $_{object \: plane}$', fontsize=18)
 
-        ax1.legend(loc='upper left')
-        ax2.legend(loc='upper right')
+        ax1.legend(loc='upper left', fontsize=18)
+        ax2.legend(loc='upper right', fontsize=18)
 
         plt.subplots_adjust(wspace=.001)
         plt.show()
