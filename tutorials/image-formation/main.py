@@ -115,46 +115,16 @@ def paraxial_camera_model():
 
     def model_paraxial_lens(zo, yo, f, d, ccd_z, ccd_h):
 
-        # in focus axial position
-        zi = thin_lens_model(zo, f)
-
-        # in focus height
-        yi = model_pinhole(zo, yo, zi)
-
-        # numerical aperture
-        NA = np.arcsin(d / (2 * zo))
-
-        # invert for plotting
-        zi = -zi
-        yi = -yi
-
-        # rays - object
-        ray_obj_z = [zo, 0]
-        ray_obj_top = [yo, d / 2]
-        ray_obj_center = [yo, 0]
-        ray_obj_bottom = [yo, -d / 2]
-
-        # rays - image
-        ray_img_z = [0, zi]
-        ray_img_top = [d / 2, yi]
-        ray_img_center = [0, yi]
-        ray_img_bottom = [-d / 2, yi]
-
-        # rays intersecting at ccd
-        ray_ccd_top = -(d / 2 - yi) * ccd_z / zi + d / 2
-        ray_ccd_center = yi * ccd_z / zi
-        ray_ccd_bottom = -(-d / 2 - yi) * ccd_z / zi - d / 2
+        if isinstance(yo, (int, float)):
+            yo = [yo]
 
         # create figure
-        # fig, [ax0, ax1, ax2] = plt.subplots(ncols=3, figsize=(12, 4), gridspec_kw={'width_ratios': [1, 2, 1]})
         fig = plt.figure(figsize=(14, 7))
         gs = GridSpec(1, 3, figure=fig)
-        # ax0 = plt.subplot(gs[1:, :])
         ax1 = plt.subplot(gs[0, :-1])
         ax1.margins(0.01)
         ax2 = plt.subplot(gs[0, -1])
         ax1.margins(0.01)
-        # ax0.margins(0.05)
 
         # optical axis
         ax1.axhline(0, color='black', linewidth=0.5, alpha=0.5, zorder=1.5)
@@ -169,40 +139,89 @@ def paraxial_camera_model():
         ax1.plot([ccd_z, ccd_z], [-ccd_h / 2, ccd_h / 2], color='black', linewidth=3, alpha=0.25, label='CCD',
                  zorder=1.5)
 
-        # image formation
-        ax1.scatter(zi, yi, color='blue', label='image')
-        ax1.plot([zi, zi], [0, yi], color='blue', linestyle='--')
-        ax1.plot(ray_img_z, ray_img_top, color='blue', alpha=0.25)
-        ax1.plot(ray_img_z, ray_img_center, color='blue', alpha=0.25)
-        ax1.plot(ray_img_z, ray_img_bottom, color='blue', alpha=0.25)
-        ax1.set_xlim([-150, 0])
-        ax1.set_ylim([-25, 25])
-
-        # object formation
-        ax2.scatter(zo, yo, color='red', label='object')
-        ax2.plot([zo, zo], [0, yo], color='red', linestyle='--')
-        ax2.plot(ray_obj_z, ray_obj_top, color='red', alpha=0.25)
-        ax2.plot(ray_obj_z, ray_obj_center, color='red', alpha=0.25)
-        ax2.plot(ray_obj_z, ray_obj_bottom, color='red', alpha=0.25)
-        ax2.set_xlim([0, zo * 1.25])
-        ax2.set_ylim([-25, 25])
-        ax2.yaxis.set_label_position("right")
-        ax2.yaxis.tick_right()
-
-        # rays intersecting ccd
-        counter = 0
-        for ray_ccd in [ray_ccd_top, ray_ccd_center, ray_ccd_bottom]:
-            if ray_ccd > -ccd_h / 2 and ray_ccd < ccd_h / 2:
-                if counter == 0:
-                    ax1.scatter(ccd_z, ray_ccd, marker='.', color='green', alpha=0.99, label=r'$ray_{CCD}$')
-                    counter = counter + 1
-                else:
-                    ax1.scatter(ccd_z, ray_ccd, marker='.', color='green', alpha=0.99)
-
         # focal plane
         ax1.plot([-f, -f], [-ccd_h / 2, ccd_h / 2], color='black', linestyle='--', alpha=0.125, label='focal plane')
 
-        ax1.grid(alpha=0.15)
+        # counter: rays intersecting ccd
+        counter = 0
+
+        for i, yo_i in enumerate(yo):
+
+            # in focus axial position
+            zi = thin_lens_model(zo, f)
+
+            # in focus height
+            yi = model_pinhole(zo, yo_i, zi)
+
+            # angle of light cone
+            theta = np.arcsin(d / (2 * zo))
+
+            # invert for plotting
+            zi = -zi
+            yi = -yi
+
+            # store initial value
+            if i == 0:
+                yo_i_i = yo_i
+                yi_i = yi
+
+            # rays - object
+            ray_obj_z = [zo, 0]
+            ray_obj_top = [yo_i, d / 2]
+            ray_obj_center = [yo_i, 0]
+            ray_obj_bottom = [yo_i, -d / 2]
+
+            # rays - image
+            ray_img_z = [0, zi]
+            ray_img_top = [d / 2, yi]
+            ray_img_center = [0, yi]
+            ray_img_bottom = [-d / 2, yi]
+
+            # rays intersecting at ccd
+            ray_ccd_top = -(d / 2 - yi) * ccd_z / zi + d / 2
+            ray_ccd_center = yi * ccd_z / zi
+            ray_ccd_bottom = -(-d / 2 - yi) * ccd_z / zi - d / 2
+
+            # conditional labeling
+            if i == len(yo) - 1:
+                ax1.scatter(zi, yi, color='blue', label='Image')
+                ax2.scatter(zo, yo_i, color='red', label='Object')
+            else:
+                ax1.scatter(zi, yi, color='blue')
+                ax2.scatter(zo, yo_i, color='red')
+
+            # image formation
+            ax1.plot([zi, zi], [0, yi], color='blue', linestyle=':', linewidth=2)
+            ax1.plot(ray_img_z, ray_img_top, color='blue', alpha=0.25)
+            ax1.plot(ray_img_z, ray_img_center, color='blue', alpha=0.25)
+            ax1.plot(ray_img_z, ray_img_bottom, color='blue', alpha=0.25)
+
+            # object formation
+            ax2.plot([zo, zo], [0, yo_i], color='red', linestyle=':', linewidth=2)
+            ax2.plot(ray_obj_z, ray_obj_top, color='red', alpha=0.25)
+            ax2.plot(ray_obj_z, ray_obj_center, color='red', alpha=0.25)
+            ax2.plot(ray_obj_z, ray_obj_bottom, color='red', alpha=0.25)
+
+            # rays intersecting ccd
+            for ray_ccd in [ray_ccd_top, ray_ccd_center, ray_ccd_bottom]:
+                if -ccd_h / 2 < ray_ccd < ccd_h / 2:
+                    if counter == 0:
+                        ax1.scatter(ccd_z, ray_ccd, marker='.', color='green', alpha=0.99, label=r'$Ray_{sensor}$')
+                        counter = counter + 1
+                    else:
+                        ax1.scatter(ccd_z, ray_ccd, marker='.', color='green', alpha=0.99)
+
+        # figure formatting
+        ax1.set_xlim([-150, 0])
+        ax1.set_ylim([-25, 25])
+        ax2.set_xlim([0, zo * 1.25])
+        ax1.set_xlabel(r'Distance $_{image \: plane}$', fontsize=14)
+        ax1.set_ylabel('Height', fontsize=14)
+        ax2.set_ylim([-25, 25])
+        ax2.yaxis.set_label_position("right")
+        ax2.yaxis.tick_right()
+        ax2.set_xlabel(r'Distance $_{object \: plane}$', fontsize=14)
+
         ax1.legend(loc='upper left')
         ax2.legend(loc='upper right')
 
@@ -215,7 +234,7 @@ def paraxial_camera_model():
     zi, yi, NA = model_paraxial_lens(zo, yo, f, d, ccd_z, ccd_h)
 
     image_position_string = "Image height yi = {} at axial distance zi = {}".format(np.round(-yi, 2), np.round(-zi, 2))
-    numerical_aperture_string = "NA = {} degrees".format(np.round(NA * 360 / (2 * np.pi), 2))
+    numerical_aperture_string = "Viewing angle = {} degrees".format(np.round(NA * 360 / (2 * np.pi), 2))
 
     st.caption(body=image_position_string)
     st.caption(body=numerical_aperture_string)
