@@ -85,6 +85,7 @@ def paraxial_camera_model():
     # object
     zo = st.slider(label='Change object distance', min_value=100, max_value=10000, value=500)
     yo = st.slider(label='Change object height', min_value=-20, max_value=20, value=(-15, -16))
+    yo_num = st.slider(label='Change number of object points', min_value=1, max_value=20, value=1)
 
     def model_pinhole(zo, yo, zi):
         yi = zi * yo / zo
@@ -231,7 +232,8 @@ def paraxial_camera_model():
 
         return zi, yi, theta
 
-    zi, yi, theta = model_paraxial_lens(zo, yo, f, d, ccd_z, ccd_h)
+    yoi = np.linspace(np.min(yo), np.max(yo), yo_num)
+    zi, yi, theta = model_paraxial_lens(zo, yoi, f, d, ccd_z, ccd_h)
 
     image_position_string = "Image height yi = {} at axial distance zi = {}".format(np.round(-yi, 2), np.round(-zi, 2))
     numerical_aperture_string = "Viewing angle = {} degrees".format(np.round(theta * 360 / (2 * np.pi), 2))
