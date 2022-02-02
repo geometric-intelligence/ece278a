@@ -490,16 +490,10 @@ def camera_intrinsics():
              r'}_\text{Rt} \cdot'
              r'\begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix} \right]')
 
-
-    """begin
-    {matrix}
-    1 & 2 & 3\ 
-            a & b & c
-    \end
-    {matrix}"""
-
-    st.text("In the paraxial refraction model, the lens focuses light rays that are parallel \n"
-            "(to the optical axes) to the focal point.")
+    st.text("where A captures the intrinsic parameters of the camera and Rt are the extrinsic parameters.\n"
+            "The intrinsic parameters describe how world coordinates map to sensor coordinates while \n"
+            "the extrinsic parameters describe the projection transformation between the world and \n"
+            "sensor coordinate axes.")
 
     st.header("Interactive Paraxial Refraction Camera Model")
 
