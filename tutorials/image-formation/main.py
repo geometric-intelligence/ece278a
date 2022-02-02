@@ -238,7 +238,7 @@ def paraxial_camera_model():
         # figure formatting
         ax1.set_xlim([-150, 0])
         ax1.set_ylim([-25, 25])
-        ax1.tick_params(axis='both', Labelsize=14)
+        ax1.tick_params(axis='both', labelsize=14)
         ax1.set_xlabel(r'Distance $_{image \: plane}$', fontsize=18)
         ax1.set_ylabel('Height', fontsize=18)
 
@@ -246,7 +246,7 @@ def paraxial_camera_model():
         ax2.set_ylim([-25, 25])
         ax2.yaxis.set_label_position("right")
         ax2.yaxis.tick_right()
-        ax2.tick_params(axis='both', Labelsize=14)
+        ax2.tick_params(axis='both', labelsize=14)
         ax2.set_xlabel(r'Distance $_{object \: plane}$', fontsize=18)
 
         ax1.legend(loc='upper left', fontsize=18)
