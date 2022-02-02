@@ -436,7 +436,7 @@ def camera_intrinsics():
              r'\begin {pmatrix} fX \\ fY \\ Z \end {pmatrix}  ='
              r'\underbrace{ '
              r'\begin {pmatrix} f & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} '
-             r'}_\text{M_{p}}'
+             r'}_\text{Mp}'
              r'\cdot \begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix}')
 
     st.latex(r'\underbrace{Mpppp}_\text{h}')
