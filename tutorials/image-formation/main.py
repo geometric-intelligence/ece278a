@@ -74,6 +74,12 @@ def paraxial_camera_model():
     :return:
     """
     # introduction
+    st.title("Paraxial Refraction Model")
+    st.subheader("A mapping from 3D objects points (the real world) to 2D image points (your iPhone screen)")
+
+    st.caption("Consider a 3D point,")
+    st.latex(r'p \: = \: [x, y, z,]^T')
+
     pic_paraxial_camera_model = io.imread('tutorials/image-formation/paraxial_camera_model_pic.png')
     st.image(pic_paraxial_camera_model, use_column_width=True)
 
