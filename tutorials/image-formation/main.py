@@ -431,11 +431,11 @@ def camera_intrinsics():
     # setup the camera model: homogeneous coordinates
     st.subheader("Camera model: homogeneous coordinates")
     st.text("We rewrite the perspective transformation as a linear matrix equation.")
-    st.latex(r'\begin {pmatrix} x \ y \end {pmatrix} \equiv '
-             r'\begin {pmatrix} fX/Z \ fY/Z \1 \end {pmatrix} \equiv'
-             r'\begin {pmatrix} fX \ fY \ Z \end {pmatrix}  ='
-             r'\begin {pmatrix} f & 0 & 0 & 0 \ 0 & f & 0 & 0 \ 0 & 0 & 1 & 0 \end {pmatrix} \cdot '
-             r'\begin {pmatrix} X \ Y \ Z \ 1 \end {pmatrix}')
+    st.latex(r'\begin {pmatrix} x \\ y \end {pmatrix} \equiv '
+             r'\begin {pmatrix} fX/Z \\ fY/Z \\ 1 \end {pmatrix} \equiv'
+             r'\begin {pmatrix} fX \\ fY \\ Z \end {pmatrix}  ='
+             r'\begin {pmatrix} f & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0 \end {pmatrix} \cdot '
+             r'\begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix}')
 
     """begin
     {matrix}
