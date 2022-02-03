@@ -499,9 +499,12 @@ def camera_intrinsics():
     """
     Author: Sean MacKenzie
     References:
-    [1] Zhang's camera calibration
-    [2] Burger's
-    [3] Blog
+    [1] Z. Zhang, "A flexible new technique for camera calibration," in IEEE Transactions on Pattern Analysis and
+    Machine Intelligence, vol. 22, no. 11, pp. 1330-1334, Nov. 2000, doi: 10.1109/34.888718.
+    [2] Burger, Wilhelm. (2016). Zhang's Camera Calibration Algorithm: In-Depth Tutorial and Implementation.
+    10.13140/RG.2.1.1166.1688/1.
+    [3] Vyass, Kushal. “Demystifying Geometric Camera Calibration for Intrinsic&nbsp;Matrix.” BitsMakeMeCrazy Br Kushal
+    Vyass Blog Full Atom, 13 May 2018, https://kushalvyas.github.io/calib.html.
     :return:
     """
 
@@ -510,11 +513,12 @@ def camera_intrinsics():
     st.subheader("A mapping from 3D objects points (the real world) to 2D image points (your iPhone screen)")
 
     st.subheader("Refining the idealized paraxial model for a real camera (including optical distortions)")
-    st.caption("Note: Optical distortions (non-idealized lens) motivate the need for camera calibration, \n"
-               "however, we do not investigate optical distortions here.")
+    st.caption("Note: Optical distortions (non-idealized lens) motivate the need for camera \n"
+               "calibration, however, we do not investigate optical distortions here.")
 
-    st.text("An accurate model of the image projection parameters for a real optical system is \n"
-            "necessary for quantitative geometric measurement in computer vision applications.")
+    st.text("An accurate model of the image projection parameters for a real optical \n"
+            "system is necessary for quantitative geometric measurement in computer vision \n"
+            "applications.")
     st.caption("An example application is the Microsoft Kinect for movement tracking.")
     st.text("In order to develop an accurate camera model, we must calibrate the camera.")
 
@@ -599,15 +603,19 @@ def camera_intrinsics():
              r'}_\text{Rt} \cdot'
              r'\begin {pmatrix} X \\ Y \\ Z \\ 1 \end {pmatrix} \right]')
 
-    st.text("where A captures the intrinsic parameters of the camera and Rt are the extrinsic parameters.\n"
-            "The intrinsic parameters describe how world coordinates map to sensor coordinates while \n"
-            "the extrinsic parameters describe the projection transformation between the world and \n"
-            "sensor coordinate axes.")
+    st.text("where A captures the intrinsic parameters of the camera and Rt are the extrinsic \n"
+            "parameters. The intrinsic parameters describe how world coordinates map to sensor \n"
+            " coordinates while the extrinsic parameters describe the projection transformation \n"
+            "between the world and sensor coordinate axes.")
 
     st.header("Demonstration of Camera Intrinsic Parameters")
 
     st.subheader("Camera calibration")
-    st.text("We will calculate the intrinsic parameters using \"plane-based self calibration.\"")
+    st.text("We will calculate the intrinsic parameters using \"plane-based self calibration.\""
+            "The camera is calibrated by mapping identical points on an object in different\n"
+            "images and at different positions in each image to their corresponding points \n"
+            "on the sensor. These sets of object and image points are then formulated as a \n"
+            "matrix in order to solve for the camera's intrinsic parameters.")
 
     fig, [ax1, ax2, ax3, ax4] = plt.subplots(ncols=4, figsize=(13, 3.5))
     for i, ax in enumerate([ax1, ax2, ax3, ax4]):
@@ -942,10 +950,11 @@ def camera_intrinsics():
     st.text("where ")
     st.latex(r'A = \begin {pmatrix} fs_x & fs_{\theta} & u_c \\ 0 & fs_y & v_c \\ 0 & 0 & 1 \end {pmatrix} ='
              r'\begin {pmatrix} \alpha & \gamma & u_c \\ 0 & \beta & v_c \\ 0 & 0 & 1 \end {pmatrix}')
-    st.text("where alpha and beta are scale factor in image u and v axes and gamma describes the skew.")
+    st.text("where alpha and beta are scale factor in image u and v axes and gamma describes the \n"
+            " skew.")
 
-    st.text("Once the intrinsic parameters are known, the extrinsic parameters can be calculated for each\n"
-            "image (view) using the corresponding homography, H.")
+    st.text("Once the intrinsic parameters are known, the extrinsic parameters can be calculated \n"
+            "for each image (view) using the corresponding homography, H.")
 
 
 if __name__ == "__main__":
