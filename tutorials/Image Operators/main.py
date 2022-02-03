@@ -7,6 +7,7 @@ from skimage import data,io,filters,color,exposure
 import imageio
 from load_css import local_css
 import matplotlib.pyplot as plt
+from scipy import ndimage
 
 local_css("style.css")
 
@@ -187,11 +188,13 @@ def pointwise():
     t = "## <span class=blue_text>3. Histogram Equalization</span>"
     st.markdown(t, unsafe_allow_html=True)
 
-    t = """<div class=TextBox> This operator utilizes the image intensity histogram to adjust the contrast. This is accomplished by
-    spreading out the most frequent intensity values in the image, resulting in a more uniform distribution of pixel intensity across the image. 
+    t = """<div class=TextBox> This method utilizes an image's histogram to adjust the contrast. An image histogram provides a visual representation of the number of pixels in an image as a function of their intensity. This is accomplished by
+    spreading out the most frequent intensity values in the image, resulting in a more uniform distribution of pixel intensity across the image. To do this, we can replace every intensity value found in the image with its corresponding CDF value. The formula can be seen below, where p is any discrete probability distribution:
     </div>"""
     
     st.markdown(t, unsafe_allow_html=True)
+
+    st.latex("CDF(\mathbf{a}) = \sum_{b=0}^{a}p(\mathbf{b}))")
 
     st.text("")
     st.text("")
@@ -318,7 +321,7 @@ def neighborhood():
 
     t = """<div class=TextBox> The Sobel operator is a two-dimensional operator that detects edges in an image by computing
     computing the gradient. It uses two 3 X 3 kernels (one each for horizontal-Gx and vertical-Gy) which are convolved to approximate 
-    the derievatives at each pixel.</div>"""
+    the derivatives at each pixel.</div>"""
 
     st.markdown(t, unsafe_allow_html=True)
 
@@ -459,6 +462,120 @@ def neighborhood():
     st.text("")
     st.text("")
     st.text("")
+
+    # --------------------------------------------------------------
+
+    t = "## <span class=blue_text>3. Moving Average filter</span>"
+    st.markdown(t, unsafe_allow_html=True)
+
+    t = """<div class=TextBox>The Moving Average filter is a low-pass blurring filter. It gradually blurs the image so that harsh transitions appear smoother. <br>
+    It averages the pixel values in a K x K by window, so basically performs convolution with a normalized constant kernel. The structure of a K x K kernel is shown below:</div>"""
+
+    st.markdown(t, unsafe_allow_html=True)
+
+    image = Image.open('img/moving_avg.png')
+    kernel = (np.array(image)/255)
+    st.image(kernel, width=700, clamp=True)
+
+
+    st.text("")
+    st.text("")
+    
+    t = """<div class=demonstration>Demonstration</div>"""
+    st.markdown(t, unsafe_allow_html=True)
+
+    test_option = st.selectbox('Do you want to upload an image ?',('No','Yes'), key='moving-avg')
+
+    if test_option == 'No':
+        img_choice1 = st.selectbox('Select an image',('Steam Engine','NYC Bridge', 'Cake', 'Busy Street', 'Bike Rack'), key="moving-avg")
+        
+        file_path = choose_img(img_choice1)
+        im = Image.open(file_path)
+
+        converted_img = np.array(im.convert('RGB'))
+        dims = st.slider('Kernel Size',1,20,step=1)
+        #slider = st.sidebar.slider('Adjust the intensity', 5, 21, 5, step=2)
+        #gray_img = color.rgb2gray(converted_img)
+        #blur_image = cv2.boxFilter(converted_img,-1,(dims,dims),cv2.BORDER_DEFAULT)
+        #st.image(blur_image,use_column_width=True,clamp=True)
+        
+
+        # Convolving with the appropriate kernel for each channel
+        kernel = np.ones((dims,dims),np.float32)/(dims*dims)
+        blur_image_r = ndimage.convolve(converted_img[:,:,0], kernel, mode='constant', cval=0.0)
+        blur_image_g = ndimage.convolve(converted_img[:,:,1], kernel, mode='constant', cval=0.0)
+        blur_image_b = ndimage.convolve(converted_img[:,:,2], kernel, mode='constant', cval=0.0)
+        
+        blur_image = np.stack((blur_image_r,blur_image_g,blur_image_b),axis=2)
+        st.image(blur_image,use_column_width=True,clamp=True)
+
+
+        pixel_l1 = converted_img[:400,:400,:]
+        pixel_l2 = blur_image[:400,:400,:]
+
+
+
+        t = """<div class=underline-text>Upper Sectional View</div>"""
+        st.markdown(t, unsafe_allow_html=True)
+        st.text("")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.image(pixel_l1, clamp=True)
+            t = """<div class=plain-text>Before blur</div>"""
+            st.markdown(t, unsafe_allow_html=True)
+
+        with col2:
+            st.image(pixel_l2,clamp=True)
+            t = """<div class=plain-text>After blur</div>"""
+            st.markdown(t, unsafe_allow_html=True)
+        
+    else:
+        image_file = st.file_uploader('Upload an image', type=['jpg', 'jpeg', 'png'],key="moving-avg")
+        if image_file is not None:
+            im = Image.open(image_file)
+            converted_img = np.array(im.convert('RGB'))
+            dims = st.slider('Kernel Size',1,20,step=1)
+            #slider = st.sidebar.slider('Adjust the intensity', 5, 21, 5, step=2)
+            #gray_img = color.rgb2gray(converted_img)
+            #blur_image = cv2.boxFilter(converted_img,-1,(dims,dims),cv2.BORDER_DEFAULT)
+            #st.image(blur_image,use_column_width=True,clamp=True)
+
+
+            # Convolving with the appropriate kernel for each channel
+            kernel = np.ones((dims,dims),np.float32)/(dims*dims)
+            blur_image_r = ndimage.convolve(converted_img[:,:,0], kernel, mode='constant', cval=0.0)
+            blur_image_g = ndimage.convolve(converted_img[:,:,1], kernel, mode='constant', cval=0.0)
+            blur_image_b = ndimage.convolve(converted_img[:,:,2], kernel, mode='constant', cval=0.0)
+        
+            blur_image = np.stack((blur_image_r,blur_image_g,blur_image_b),axis=2)
+            st.image(blur_image,use_column_width=True,clamp=True)
+
+
+
+            pixel_l1 = converted_img[:400,:400,:]
+            pixel_l2 = blur_image[:400,:400,:]
+
+
+
+            t = """<div class=underline-text>Upper Sectional View</div>"""
+            st.markdown(t, unsafe_allow_html=True)
+            st.text("")
+            col1, col2 = st.columns(2)
+
+            with col1:
+                st.image(pixel_l1, clamp=True)
+                t = """<div class=plain-text>Before blur</div>"""
+                st.markdown(t, unsafe_allow_html=True)
+
+            with col2:
+                st.image(pixel_l2,clamp=True)
+                t = """<div class=plain-text>After blur</div>"""
+                st.markdown(t, unsafe_allow_html=True)
+    
+
+
+
 
 
 if __name__=="__main__":
