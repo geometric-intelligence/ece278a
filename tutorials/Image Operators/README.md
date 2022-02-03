@@ -10,4 +10,4 @@ This web app was created as a part of ECE-278A at UCSB. It illustrates various p
 |               |                                |
 |---------------|--------------------------------|
 | Monsij Biswal | Gain/Bias, Sobel, Linear Blend |
-| Swetha Pillai | Gaussian Blur, Histogram Eq.   |
+| Swetha Pillai | Gaussian Blur, Histogram Eq., Moving Average |
