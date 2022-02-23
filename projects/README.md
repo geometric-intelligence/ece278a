@@ -1,6 +1,6 @@
 # Projects
 
-- Deadline for project proposals (Pull Requests to this repository): 03/02/2022 11:59 PM.
+- Deadline for project (Pull Requests to this repository): 03/02/2022 11:59 PM.
 - Presentations in class: 03/09 (15-20 min).
 - Teams of 4-5 students.
 
