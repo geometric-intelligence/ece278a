@@ -1,7 +1,7 @@
 # Projects
 
-- Deadline: 03/02/2022 11:59 PM.
-- Teams of 4-5 students.
+- Deadline for project reports and for presentations in class: 03/09 (15-20 min if you are a group of 4-5, 8-10 min if you are a group of 2-3).
+- Teams of 2-5 students.
 
 ## Guidelines
 
