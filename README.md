@@ -5,7 +5,7 @@ This is the GitHub repository for the course:
 
 ECE-278a: Digital Image Processing at UC Santa Barbara, Winter 2022.
 
-Instructor: [Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [BioShape Lab](bioshape.ece.ucsb.edu), UC Santa Barbara.
+Instructor: [Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [BioShape Lab](https://bioshape.ece.ucsb.edu/), UC Santa Barbara.
 
 You can access and run the lecture slides and lab notebooks by clicking on the Binder link below.
 
