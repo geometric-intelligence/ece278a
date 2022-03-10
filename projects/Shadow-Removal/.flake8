@@ -1,0 +1,6 @@
+[flake8]
+docstring-convention = numpy
+ignore = W503, W504
+max-line-length = 88
+per-file-ignores =
+    */__init__.py: D104
