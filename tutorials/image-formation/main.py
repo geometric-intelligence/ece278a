@@ -50,6 +50,9 @@ def main():
 
     if selected_box == "Camera Intrinsics":
         camera_intrinsics()
+        
+    if selected_box == "Camera Extrinsics":
+        camera_intrinsics()
 
 
 def welcome():
