@@ -1,0 +1,22 @@
+.DS_Store
+*/__pycache__/
+reveal.js/
+*/.ipynb_checkpoints/
+*.iml
+videos/*
+tutorials/Image Segmentation/.idea/.name
+tutorials/Image Segmentation/.idea/inspectionProfiles/profiles_settings.xml
+tutorials/Image Segmentation/.idea/inspectionProfiles/Project_Default.xml
+tutorials/Image Segmentation/.idea/misc.xml
+tutorials/Image Segmentation/.idea/modules.xml
+tutorials/Image Segmentation/.idea/vcs.xml
+tutorials/Image Segmentation/lib/__pycache__/imgproc.cpython-310.pyc
+tutorials/Image Segmentation/lib/__pycache__/webapp.cpython-310.pyc
+tutorials/Image Segmentation/Pipfile
+tutorials/Image Segmentation/source/2019-05-27 23.44.45.jpg
+tutorials/Image Segmentation/source/2019-10-02 21.31.57-1.jpg
+tutorials/Image Segmentation/source/2020-01-01 01.27.04.jpg
+tutorials/Image Segmentation/source/beach.jpeg
+tutorials/example-app/Pipfile
+tutorials/Image Segmentation/Pipfile
+tutorials/Image Segmentation/Pipfile

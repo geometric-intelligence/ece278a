@@ -1,0 +1,12 @@
+name: courses
+channels:
+  - conda-forge
+dependencies:
+  - jupyter_contrib_nbextensions
+  - jupyter_nbextensions_configurator
+  - numpy
+  - opencv
+  - pip
+  - rise
+  - pip:
+    - streamlit
