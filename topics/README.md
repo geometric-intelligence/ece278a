@@ -1,4 +1,23 @@
-# Sign up to present a topic
+# Present a topic
+
+## Guidelines
+
+- Create a new folder in this folder with the name of your topic
+- In this new folder:
+  - Add python files
+  - Add the Jupyter notebook that represents the slides that you will present in class.
+- Make sure to indicate which teammate did which part of the work.
+- You can submit code to this repository anytime until the day of your presentation
+
+# Grading Criteria
+
+- Structure: Did you respect the structure:
+  - Theory
+  - Code
+  - Recent example using this topic
+- Software: does the code run?
+- Presentation: is the presentation clear and does it describe well the topic / concept?
+
 
 ## Transforms
 - [ ] 04/10/2024: Fourier Transform
