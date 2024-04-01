@@ -2,6 +2,7 @@
 
 ## Guidelines
 
+- Use the conda environment of the class, by running: `conda env create -f environment.yml`
 - Create a new folder in this folder with the name of your topic
 - In this new folder:
   - Add python files
