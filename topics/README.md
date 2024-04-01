@@ -27,7 +27,7 @@
 - [ ] 04/17/2024: Wavelets
 
 ### Edges and Contours
-- [ ] 04/29/2024: Edge detection: Sobel detector, Canny detector, Marr / Hildreth detector, Hough transform
+- [X] 04/29/2024: Edge detection: Sobel detector, Canny detector, Marr / Hildreth detector, Hough transform - Zhiyu Xue
 - [ ] 05/01/2024: Contour tracing: active contours (snakes, intelligent scissors, level set techniques)
 
 ### Segmentation techniques
