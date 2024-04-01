@@ -13,7 +13,7 @@
 - Make sure to indicate which teammate did which part of the work.
 - You can submit code to this repository anytime until the deadline.
 
-# Grading Criteria
+## Grading Criteria
 
 - Project topic: is the question tackled by the project sounded, and is the dataset appropriate to tackle this question?
 - Tools: does the project rely on tools taught by this class?
