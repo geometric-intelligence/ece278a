@@ -22,8 +22,8 @@
 ## Choose Your Topic
 
 ### Transforms
-- [ ] 04/10/2024: Fourier Transform
-- [ ] 04/15/2024: Pyramids
+- [X] 04/10/2024: Fourier Transform - Tyler Hattori
+- [X] 04/15/2024: Pyramids - Joshua Kim, Liming Ding
 - [ ] 04/17/2024: Wavelets
 
 ### Edges and Contours
