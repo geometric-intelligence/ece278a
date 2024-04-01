@@ -7,10 +7,6 @@ ECE-278a: Digital Image Processing at UC Santa Barbara, Spring 2024.
 
 Instructor: [Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [Geometric Intelligence Lab](https://gi.ece.ucsb.edu/), UC Santa Barbara.
 
-You can access and run the lecture slides and lab notebooks by clicking on the Binder link below.
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/geometric-intelligence/ece278a/main?filepath=lectures)
-
 The content of this class relies on the following excellent resources:
 - Slides from B. S. Manjunath from previous years of ECE 278A.
 - Textbook [Computer Vision: Algorithms and Applications](https://szeliski.org/Book/), by [Richard Sweliski](http://szeliski.org/RichardSzeliski.htm).
