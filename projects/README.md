@@ -1,4 +1,4 @@
-# Projects
+# Present a Project
 
 - Deadline for project reports and for presentations in class: 06/03 and 06/05. (5 min per student.)
 - Teams allowed.
