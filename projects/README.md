@@ -5,6 +5,7 @@
 
 ## Guidelines
 
+- Use the conda environment of the class, by running: `conda env create -f environment.yml`
 - Create a new folder in this folder with the name of your project
 - In this new folder:
   - Add python files
@@ -12,7 +13,7 @@
 - Make sure to indicate which teammate did which part of the work.
 - You can submit code to this repository anytime until the deadline.
 
-# Grading Criteria
+## Grading Criteria
 
 - Project topic: is the question tackled by the project sounded, and is the dataset appropriate to tackle this question?
 - Tools: does the project rely on tools taught by this class?

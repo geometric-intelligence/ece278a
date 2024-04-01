@@ -1,12 +1,11 @@
-name: courses
+name: ece278a
 channels:
   - conda-forge
 dependencies:
+  - python=3.11
   - jupyter_contrib_nbextensions
   - jupyter_nbextensions_configurator
   - numpy
   - opencv
   - pip
   - rise
-  - pip:
-    - streamlit
