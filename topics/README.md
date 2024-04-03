@@ -28,17 +28,17 @@
 
 ### Edges and Contours
 - [X] 04/29/2024: Edge detection: Sobel detector, Canny detector, Marr / Hildreth detector, Hough transform - Zhiyu Xue
-- [ ] 05/01/2024: Contour tracing: active contours (snakes, intelligent scissors, level set techniques)
+- [X] 05/01/2024: Contour tracing: active contours (snakes, intelligent scissors, level set techniques) - Grace Zhang
 
 ### Segmentation techniques
-- [ ] 05/06/2024: Segmentation: Thresholding + Region-based (region growing, etc)
-- [ ] 05/08/2024: Segmentation: Clustering (mean-shift) + Graph-based methods (graph-cut, random walk, etc)
+- [X] 05/06/2024: Segmentation: Thresholding + Region-based (region growing, etc) - Yubin Deng, Zhixiong Chen
+- [X] 05/08/2024: Segmentation: Clustering (mean-shift) + Graph-based methods (graph-cut, random walk, etc) - Abby Bertics
 - [ ] 05/13/2024: Segmentation: Energy-minimization (Conditional Random Fields)
 
 ### Image Alignment and Stitching
-- [ ] 05/15/2024: Image Alignment and Stitching
+- [X] 05/15/2024: Image Alignment and Stitching - Shawson Hsiao
 
 ### Reconstruction
-- [ ] 05/20/2024: Reconstruction via triangulation (line of sight, linear + nonlinear methods)
-- [ ] 05/22/2024: Reconstruction: Structure from Motion (affine only), Tomasi and Kanade Factorization Method
+- [X] 05/20/2024: Reconstruction via triangulation (line of sight, linear + nonlinear methods) - Anirban Banik, Utso Majumder
+- [X] 05/22/2024: Reconstruction: Structure from Motion (affine only), Tomasi and Kanade Factorization Method - Yequan Zhao, Liyan Tan
 - [ ] 05/29/2024: Reconstruction: Active and Volumetric Stereo
