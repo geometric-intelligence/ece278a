@@ -24,19 +24,19 @@
 ### Transforms
 - [X] 04/10/2024: Fourier Transform - Tyler Hattori
 - [X] 04/15/2024: Pyramids - Joshua Kim, Liming Ding
-- [ ] 04/17/2024: Wavelets
+- [X] 04/17/2024: Wavelets - Jack Shoemaker
 
 ### Edges and Contours
-- [X] 04/29/2024: Edge detection: Sobel detector, Canny detector, Marr / Hildreth detector, Hough transform - Zhiyu Xue
+- [X] 04/29/2024: Edge detection: Sobel detector, Canny detector, Marr / Hildreth detector, Hough transform - Zhiyu Xue, Youngseok Yoon
 - [X] 05/01/2024: Contour tracing: active contours (snakes, intelligent scissors, level set techniques) - Grace Zhang
 
 ### Segmentation techniques
 - [X] 05/06/2024: Segmentation: Thresholding + Region-based (region growing, etc) - Yubin Deng, Zhixiong Chen
 - [X] 05/08/2024: Segmentation: Clustering (mean-shift) + Graph-based methods (graph-cut, random walk, etc) - Abby Bertics
-- [ ] 05/13/2024: Segmentation: Energy-minimization (Conditional Random Fields)
+- [X] 05/13/2024: Segmentation: Energy-minimization (Conditional Random Fields) - Shawn Catudal
 
 ### Image Alignment and Stitching
-- [X] 05/15/2024: Image Alignment and Stitching - Shawson Hsiao
+- [X] 05/15/2024: Image Alignment and Stitching - Shawson Hsiao, Peicheng Wu
 
 ### Reconstruction
 - [X] 05/20/2024: Reconstruction via triangulation (line of sight, linear + nonlinear methods) - Anirban Banik, Utso Majumder
