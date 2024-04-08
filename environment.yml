@@ -5,7 +5,9 @@ dependencies:
   - python=3.11
   - jupyter_contrib_nbextensions
   - jupyter_nbextensions_configurator
+  - matplotlib
   - numpy
   - opencv
   - pip
   - rise
+  - scikit-image
