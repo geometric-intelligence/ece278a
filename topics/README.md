@@ -33,7 +33,7 @@
 ### Segmentation techniques
 - [X] 05/06/2024: Segmentation: Thresholding + Region-based (region growing, etc) - Yubin Deng, Zhixiong Chen
 - [X] 05/08/2024: Segmentation: Clustering (mean-shift) + Graph-based methods (graph-cut, random walk, etc) - Abby Bertics, Siru Chen
-- [X] 05/13/2024: Segmentation: Energy-minimization (Conditional Random Fields) - Shawn Catudal
+- [X] 05/13/2024: Segmentation: Energy-minimization (Conditional Random Fields) - Shawn Catudal, Svanberg Addi Stefansson
 
 ### Image Alignment and Stitching
 - [X] 05/15/2024: Image Alignment and Stitching - Shawson Hsiao, Peicheng Wu
