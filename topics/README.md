@@ -36,7 +36,7 @@
 - [X] 05/13/2024: Segmentation: Energy-minimization (Conditional Random Fields) - Shawn Catudal, Svanberg Addi Stefansson
 
 ### Image Alignment and Stitching
-- [X] 05/15/2024: Image Alignment and Stitching - Shawson Hsiao, Peicheng Wu
+- [X] 05/15/2024: Image Alignment and Stitching - Shawson Hsiao, Peicheng Wu, Shang-Hsun Yang
 
 ### Reconstruction
 - [X] 05/20/2024: Reconstruction via triangulation (line of sight, linear + nonlinear methods) - Anirban Banik, Utso Majumder
