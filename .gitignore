@@ -20,3 +20,4 @@ tutorials/Image Segmentation/source/beach.jpeg
 tutorials/example-app/Pipfile
 tutorials/Image Segmentation/Pipfile
 tutorials/Image Segmentation/Pipfile
+private/*
