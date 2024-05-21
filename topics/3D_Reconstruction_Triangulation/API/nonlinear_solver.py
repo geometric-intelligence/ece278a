@@ -89,7 +89,7 @@ def jacobian_single_camera(P, M):
         [M[1, 0] - M[2, 0] * p_pred[1] / Z, M[1, 1] - M[2, 1] * p_pred[1] / Z, M[1, 2] - M[2, 2] * p_pred[1] / Z]
     ])
 
-def gauss_newton_stereo(P_init, M1, M2, p1, p2, max_iter=10):
+def gauss_newton_stereo(P_init, M1, M2, p1, p2, max_iter=5):
     P = P_init.copy()
     for i in range(max_iter):
         e = reprojection_error_N2(P, M1, M2, p1, p2)
