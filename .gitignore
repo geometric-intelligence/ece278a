@@ -2,6 +2,7 @@
 */__pycache__/
 reveal.js/
 */.ipynb_checkpoints/
+.ipynb_checkpoints/
 *.iml
 videos/*
 tutorials/Image Segmentation/.idea/.name
