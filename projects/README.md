@@ -3,6 +3,23 @@
 - Deadline for project reports and for presentations in class: 06/03 and 06/05. (5 min per student.)
 - Teams allowed.
 
+
+## Presenting on June 3rd
+- Svanberg Addi Stefansson
+- Limin Ding
+- Shang-Hsun Yang
+
+
+## Presenting on June 5th
+- Abby Bertics
+- Jack Shoemaker
+- Maxwell Jung
+- Grace Zhang
+- Utso Majumder and Anirban Banik
+- Peicheng Wu, Yequan Zhao, Liyan Tan, Zhixiong Chen, Yubin Den
+- Brian Li, Shawson Hsiao, and Tyler Hattori
+
+
 ## Guidelines
 
 - Use the conda environment of the class, by running: `conda env create -f environment.yml`
