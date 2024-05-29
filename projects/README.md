@@ -8,7 +8,11 @@
 - Svanberg Addi Stefansson
 - Limin Ding
 - Shang-Hsun Yang
-
+- Zhiyu Xue
+- Youngseok Yoon
+- Yihao Wu
+- Siru Chen
+- Shawn Catudal
 
 ## Presenting on June 5th
 - Abby Bertics
@@ -16,7 +20,7 @@
 - Maxwell Jung
 - Grace Zhang
 - Utso Majumder and Anirban Banik
-- Peicheng Wu, Yequan Zhao, Liyan Tan, Zhixiong Chen, Yubin Den
+- Peicheng Wu, Yequan Zhao, Liyan Tan, Zhixiong Chen, Yubin Deng
 - Brian Li, Shawson Hsiao, and Tyler Hattori
 
 
