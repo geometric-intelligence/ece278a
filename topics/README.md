@@ -23,7 +23,7 @@
 
 ### Transforms
 - [X] 04/10/2024: Fourier Transform - Tyler Hattori, Brian Li
-- [X] 04/15/2024: Pyramids - Joshua Kim, Liming Ding
+- [X] 04/15/2024: Pyramids - Liming Ding
 - [X] 04/17/2024: Wavelets - Jack Shoemaker
 
 ### Edges and Contours
