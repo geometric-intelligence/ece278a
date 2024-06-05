@@ -20,3 +20,10 @@ tutorials/Image Segmentation/source/beach.jpeg
 tutorials/example-app/Pipfile
 tutorials/Image Segmentation/Pipfile
 tutorials/Image Segmentation/Pipfile
+
+*.gitignore
+
+bioseg/*
+SfM/*
+topics/Reconstruction_Structure_from_Motion/*
+projects/biomedical_segmentation/kartezio_exp/dataset/*
