@@ -1,0 +1,461 @@
+/home/zhiyuxue/anaconda3/lib/python3.11/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zhiyuxue/anaconda3/lib/python3.11/site-packages/transformers/models/llava/configuration_llava.py:103: FutureWarning: The `vocab_size` argument is deprecated and will be removed in v4.42, since it can be inferred from the `text_config`. Passing this argument has no effect
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:02<00:13,  2.75s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:05<00:10,  2.69s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:07<00:07,  2.60s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:10<00:05,  2.53s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:12<00:02,  2.47s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:13<00:00,  1.99s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:13<00:00,  2.29s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+A
+A
+(b) Thin
+(b) Thin
+(a) Left
+(b) Right
+Away from the camera
+Away from the camera
+No
+No
+Yes
+No
+(b) Multiple
+(b) Multiple
+Yes
+No
+No
+Yes
+Yes
+No
+No
+No
+Front
+Front
+A
+B
+Yes
+No
+(b) Incorrect
+(b) Incorrect
+Yes
+Yes
+Yes
+No
+No
+No
+A
+B
+Yes
+No
+Yes
+Yes
+No
+No
+Yes
+No
+(b) 6
+(b) 6
+No
+No
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+No
+No
+Yes
+Yes
+Yes
+No
+(b) Incorrect
+(b) Incorrect
+(a) Correct
+(b) Incorrect
+Yes
+No
+Yes
+Yes
+Locked
+(a) Locked
+Yes
+No
+(a) Top
+(b) Side
+Yes
+Yes
+A
+(b) Forward
+Yes
+(b) No
+Yes
+Yes
+A
+A
+Yes
+No
+Yes
+No
+Yes
+Yes
+Yes
+No
+(a) Very dense
+(a) Very dense
+Yes
+No
+(a) Long
+A
+Bump
+Bump
+Up
+Up
+A
+A
+Yes
+Yes
+Upward
+Upward
+A
+A
+Yes
+No
+Away from the camera
+Away from the camera
+B
+B
+B
+B
+Yes
+Yes
+Left
+(b) Right
+Yes
+No
+(a) Protruding
+(a) Protruding
+B
+B
+A
+B
+(a) OK/SELECT
+(a) OK/SELECT
+(a) 1
+(b) 2
+A
+B
+Yes
+Yes
+Raised
+Raised
+Upright
+(b) Upside down
+(a) Looking down from above
+(a) Looking down from above
+(b) Not visible
+(b) Not visible
+A
+A
+(a) Back view
+(a) Back view
+B
+B
+(b) On the Windowsill
+(b) On the Windowsill
+A
+B
+(b) Both arms
+(b) Both arms
+(b) 1
+(b) 1
+(a) In front of a large window
+(a) In front of a large window
+(b) In bowls of yogur
+(a) On a dish
+(a) Some are cut open
+(a) Some are cut open
+Yes
+No
+Yes
+No
+B
+B
+Dark
+B
+(a) Facing the ocean
+(b) Turned sideways to the ocean
+B
+(b) 2
+(b) White
+(b) White
+(a) Holding hands
+(a) Holding hands
+Yes
+Yes
+(b) Both arms
+(b) Both arms
+(a) Grass
+(b) Gravel path
+Yes
+No
+(a) Floor
+(b) Soil
+(a) Yes
+Yes
+Yes
+No
+A
+B
+(b) "Happy Easter!"
+(b) "Happy Easter!"
+Yes
+(b) No
+Yes
+(b) No
+(b) Yellow
+B
+Yes
+No
+(b) Fingers
+(b) Fingers
+No
+No
+No
+Yes
+(b) Standing up
+(b) Standing up
+Away from
+Away from
+No
+No
+Yes
+No
+No
+No
+Yes
+Yes
+B
+No
+Yes
+Yes
+(b) Light blue
+(b) Light blue
+A
+A
+Yes
+No
+(a) Side by side
+(a) Side by side
+A
+A
+(b) Right
+(b) Right
+(b) Sitting
+(b) Sitting
+Yes
+A
+(a) Strawberries
+(b) Cream
+(b) Glass
+B
+(a) Santa Claus
+B
+Yes
+Yes
+(a) There is one inside
+(a) There is one inside
+(b) Right
+(b) Right
+(b) White
+B
+(a) Slice
+(b) Whole
+(a) Tied
+(b) Untied
+(b) In profile
+(b) In profile
+(b) A painting hanging on it
+B
+(a) Shirt
+(a) Shirt
+A
+(b) Bats
+B
+B
+(a) SUGAR
+(a) SUGAR
+B
+A
+Yes
+No
+(a) Salmon fillet
+(b) Salmon steak
+Yes
+No
+(a) Placed on a surface
+(a) Placed on a surface
+(a) Correct
+(a) Correct
+Yes
+Yes
+Left
+(b) Right
+A
+A
+Yes
+Yes
+(b) Most of the background is dark and
+(b) Most of the background is dark and
+A
+(b) Thin
+(a) Left
+Away from the camera
+No
+Yes
+(b) Multiple
+Yes
+No
+Yes
+No
+Front
+A
+Yes
+(b) Incorrect
+Yes
+Yes
+No
+A
+Yes
+Yes
+No
+Yes
+(b) 6
+No
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+(b) Incorrect
+(a) Correct
+Yes
+Yes
+Locked
+Yes
+(a) Top
+Yes
+A
+Yes
+Yes
+A
+Yes
+Yes
+Yes
+Yes
+(a) Very dense
+Yes
+(a) Long
+Bump
+Up
+A
+Yes
+Upward
+A
+Yes
+Away from the camera
+B
+B
+Yes
+Left
+Yes
+(a) Protruding
+B
+A
+(a) OK/SELECT
+(a) 1
+A
+Yes
+Raised
+Upright
+(a) Looking down from above
+(b) Not visible
+A
+(a) Back view
+B
+(b) On the Windowsill
+A
+(b) Both arms
+(b) 1
+(a) In front of a large window
+(b) In bowls of yogur
+(a) Some are cut open
+Yes
+Yes
+B
+Dark
+(a) Facing the ocean
+B
+(b) White
+(a) Holding hands
+Yes
+(b) Both arms
+(a) Grass
+Yes
+(a) Floor
+(a) Yes
+Yes
+A
+(b) "Happy Easter!"
+Yes
+Yes
+(b) Yellow
+Yes
+(b) Fingers
+No
+No
+(b) Standing up
+Away from
+No
+Yes
+No
+Yes
+B
+Yes
+(b) Light blue
+A
+Yes
+(a) Side by side
+A
+(b) Right
+(b) Sitting
+Yes
+(a) Strawberries
+(b) Glass
+(a) Santa Claus
+Yes
+(a) There is one inside
+(b) Right
+(b) White
+(a) Slice
+(a) Tied
+(b) In profile
+(b) A painting hanging on it
+(a) Shirt
+A
+B
+(a) SUGAR
+B
+Yes
+(a) Salmon fillet
+Yes
+(a) Placed on a surface
+(a) Correct
+Yes
+Left
+A
+Yes
+(b) Most of the background is dark and
+--------------
+31
+150
+0.20666666666666667
+--------------

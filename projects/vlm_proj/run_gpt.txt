@@ -1,0 +1,247 @@
+(a) Open
+(a) Open
+(b) Thin
+(b) Thin
+(b) Right
+(b) Right
+(a) Towards the camera
+(b) Away from the camera
+(a) Yes
+(b) No
+(a)
+(b) No
+(b) Multiple
+(b) Multiple
+(a)
+(a)
+(b) No
+(b) No
+(a) Yes
+(b) No
+(b)
+(b)
+(b) Side
+(b) Side
+(a) Black
+(b) Red
+(a)
+(b) No
+(a) Correct
+(b) Incorrect
+(a)
+(a)
+(a)
+(a)
+(b) No
+(b) No
+(b) Violet
+(b) Violet
+(a)
+(b) No
+(a)
+(a)
+(b) No
+(b) No
+(b) No
+(b) No
+(b) 6
+(b) 6
+(b) No
+(b) No
+(a) Yes
+(a) Yes
+(a)
+(a)
+(a)
+(b) No
+(a)
+(b) No
+(b) No
+(b) No
+(a) Yes
+(b) No
+(b) Incorrect
+(b) Incorrect
+(b) Incorrect
+(b) Incorrect
+(a)
+(b) No
+(a)
+(b) No
+(b) Unlocked
+(b) Unlocked
+(a) Yes
+(b) No
+(a) Top
+(b) Side
+(b) No
+(a)
+(b) Forward
+(b) Forward
+(b) No
+(b) No
+(b) No
+(a) Yes
+(b) Drooping
+(b) Drooping
+(a)
+(b) No
+(a) Yes
+(b) No
+(b) No
+(b) No
+(a)
+(b) No
+(b) Relatively sparse
+(b) Relatively sparse
+(a)
+(a) Yes
+(a) Long
+(a) Long
+(a) Bump
+(b) Set
+(a) Up
+(b) Down
+(b) Above
+(b) Above
+(b) No
+(b) No
+(b) Downward
+(b) Downward
+(b) Outward
+(b) Outward
+(a)
+(b) No
+(b) Facing the camera
+(b) Facing the camera
+(a)
+(a)
+(b) 2
+(b) 2
+(a) Yes
+(b) No
+(b) Right
+(b) Right
+(a) Yes
+(b) No
+(a) Protruding
+(a) Protruding
+(b) At an angle
+(b) At an angle
+(b) Carpet
+(b)
+(a) OK/SELECT
+(b) OK
+(a)
+(b) 2
+(a) Coiled
+(b) Head extended
+(b) No
+(b) No
+(b) Lowered
+(a) Raised
+(a) Upright
+(a) Upright
+(a) Looking down from above
+(b) Looking up from below
+(a) Visible
+(a) Visible
+(b) Right
+(b) Right
+(b) Side view
+(b) Side view
+(b) More than one
+(b) More than one
+(b) On the Windowsill
+(b) On the Windowsill
+(b) Black
+(b) Black
+(a) One arm
+(a) One arm
+(b) 1
+(b) 1
+(b) In front of a wall between two windows
+(b) In front of a wall between two windows
+(b)
+(b) In bowls of yogurts
+(a) Some are cut open
+(b) All are uncut
+(a) Yes
+(b) No
+(a)
+(a)
+(b) Raised
+(b) Raised
+(a) Dark
+(b) Light
+(a) Facing the ocean
+(b) Turned sideways to the ocean
+(b) 2
+(b) 2
+(a) Blue
+(b) White
+(b) Leaning against
+(b) Leaning against
+(a)
+(a)
+(b) Both arms
+(a) One arm
+(b) Gravel path
+(b) Gravel path
+(a)
+(b) No
+(a) Floor
+(b) Soil
+(a)
+(a)
+(a) Yes
+(b) No
+(a) Quail eggs
+(b) Chicken eggs
+(a) "Happy Easter"
+(b) "Happy Easter!"
+(a)
+(b) No
+(a) Yes
+(b) No
+(a) Red
+(b) Yellow
+(a)
+(b) No
+(a) Palm
+(b) Fingers
+(a) Yes
+(b) No
+(a)
+(b) No
+(a) Flat
+(b) Standing up
+(a) Towards
+(b) Away from
+(b) No
+(b) No
+(a)
+(b)
+(b) No
+(b) No
+(a)
+(a) Yes
+(b) No
+(b) No
+(b) No
+(b) No
+(b) Light blue
+(b) Light blue
+(b) Back
+(b) Back
+(a)
+(b) No
+(a) Side by side
+(a) Side by side
+(a) Above
+(b) From the side
+Traceback (most recent call last):
+  File "/home/zhiyuxue/vlm_proj/main_gpt.py", line 104, in <module>
+    ans = response.json()['choices'][0]['message']['content']
+          ~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'choices'
