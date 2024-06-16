@@ -1,0 +1,80 @@
+{
+    "dataset": {
+        "name": "Breast cancer",
+        "label_name": "breast cancer",
+        "indices": null
+    },
+    "individual": {
+        "sequence": "[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [38, 0, 1, 78, 116], [19, 1, 3, 41, 112], [30, 0, 4, 145, 165], [37, 3, 1, 149, 220], [6, 0, 2, 159, 20], [36, 1, 6, 175, 129], [39, 4, 6, 250, 62], [21, 0, 5, 108, 195], [24, 8, 4, 99, 14], [21, 7, 0, 54, 251], [1, 4, 4, 162, 233], [32, 0, 2, 127, 80], [11, 3, 13, 25, 65], [27, 14, 0, 128, 148], [0, 7, 15, 79, 222], [38, 12, 4, 167, 125], [1, 13, 17, 214, 119], [35, 7, 14, 177, 16], [39, 16, 0, 2, 205], [27, 10, 7, 29, 141], [5, 14, 6, 47, 61], [29, 17, 9, 14, 146], [28, 21, 22, 23, 73], [30, 12, 7, 181, 166], [41, 3, 6, 177, 139], [36, 22, 6, 204, 0], [40, 13, 15, 236, 170], [16, 17, 10, 105, 235], [37, 2, 11, 46, 132], [16, 24, 12, 31, 119], [0, 8, 0, 0, 0], [0, 19, 0, 0, 0]]",
+        "fitness": {
+            "fitness": 0.9115698370151222,
+            "time": 0.05011669794718424
+        }
+    },
+    "decoding": {
+        "metadata": {
+            "rows": 1,
+            "columns": 30,
+            "n_in": 3,
+            "n_out": 2,
+            "n_para": 2,
+            "n_conn": 2
+        },
+        "functions": [
+            "max",
+            "min",
+            "mean",
+            "add",
+            "subtract",
+            "bitwise_not",
+            "bitwise_or",
+            "bitwise_and",
+            "bitwise_and_mask",
+            "bitwise_xor",
+            "sqrt",
+            "pow2",
+            "exp",
+            "log",
+            "median_blur",
+            "gaussian_blur",
+            "laplacian",
+            "sobel",
+            "robert_cross",
+            "canny",
+            "sharpen",
+            "gabor",
+            "abs_diff",
+            "abs_diff2",
+            "fluo_tophat",
+            "rel_diff",
+            "erode",
+            "dilate",
+            "open",
+            "close",
+            "morph_gradient",
+            "morph_tophat",
+            "morph_blackhat",
+            "fill_holes",
+            "remove_small_objects",
+            "remove_small_holes",
+            "threshold",
+            "threshold_at_1",
+            "distance_transform",
+            "distance_transform_and_thresh",
+            "inrange_bin",
+            "inrange"
+        ],
+        "endpoint": {
+            "name": "Marker-Based Watershed",
+            "abbv": "WSHD",
+            "arity": 2,
+            "args": 0,
+            "kwargs": {
+                "use_dt": false,
+                "markers_distance": 21,
+                "markers_area": null
+            }
+        },
+        "mode": "default"
+    }
+}

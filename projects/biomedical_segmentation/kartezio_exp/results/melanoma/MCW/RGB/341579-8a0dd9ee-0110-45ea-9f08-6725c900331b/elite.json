@@ -1,0 +1,80 @@
+{
+    "dataset": {
+        "name": "Melanoma",
+        "label_name": "melanoma",
+        "indices": null
+    },
+    "individual": {
+        "sequence": "[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [23, 1, 0, 129, 146], [41, 3, 0, 170, 20], [7, 2, 4, 117, 47], [29, 4, 1, 11, 79], [38, 5, 1, 46, 102], [4, 2, 0, 103, 241], [18, 2, 0, 158, 24], [18, 7, 8, 44, 230], [34, 7, 6, 121, 21], [28, 11, 10, 63, 197], [32, 9, 3, 251, 208], [33, 3, 6, 117, 93], [4, 8, 0, 192, 59], [37, 6, 12, 132, 136], [19, 2, 14, 215, 63], [39, 17, 13, 55, 76], [3, 8, 4, 73, 123], [17, 6, 15, 252, 226], [34, 15, 2, 204, 188], [3, 0, 13, 209, 201], [2, 1, 22, 245, 111], [40, 22, 20, 65, 232], [20, 2, 13, 87, 233], [33, 17, 3, 130, 203], [3, 18, 25, 21, 96], [18, 14, 8, 148, 246], [14, 2, 8, 129, 248], [38, 1, 1, 103, 25], [20, 26, 29, 66, 44], [37, 2, 21, 145, 163], [0, 21, 0, 0, 0], [0, 12, 0, 0, 0]]",
+        "fitness": {
+            "fitness": 0.21063347905874252,
+            "time": 0.009767770767211914
+        }
+    },
+    "decoding": {
+        "metadata": {
+            "rows": 1,
+            "columns": 30,
+            "n_in": 3,
+            "n_out": 2,
+            "n_para": 2,
+            "n_conn": 2
+        },
+        "functions": [
+            "max",
+            "min",
+            "mean",
+            "add",
+            "subtract",
+            "bitwise_not",
+            "bitwise_or",
+            "bitwise_and",
+            "bitwise_and_mask",
+            "bitwise_xor",
+            "sqrt",
+            "pow2",
+            "exp",
+            "log",
+            "median_blur",
+            "gaussian_blur",
+            "laplacian",
+            "sobel",
+            "robert_cross",
+            "canny",
+            "sharpen",
+            "gabor",
+            "abs_diff",
+            "abs_diff2",
+            "fluo_tophat",
+            "rel_diff",
+            "erode",
+            "dilate",
+            "open",
+            "close",
+            "morph_gradient",
+            "morph_tophat",
+            "morph_blackhat",
+            "fill_holes",
+            "remove_small_objects",
+            "remove_small_holes",
+            "threshold",
+            "threshold_at_1",
+            "distance_transform",
+            "distance_transform_and_thresh",
+            "inrange_bin",
+            "inrange"
+        ],
+        "endpoint": {
+            "name": "Marker-Based Watershed",
+            "abbv": "WSHD",
+            "arity": 2,
+            "args": 0,
+            "kwargs": {
+                "use_dt": false,
+                "markers_distance": 21,
+                "markers_area": null
+            }
+        },
+        "mode": "default"
+    }
+}
