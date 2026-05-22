@@ -1,0 +1,18 @@
+name: ece278a
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - matplotlib
+  - numpy
+  - opencv
+  - pip
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - notebook<7
+  - pip:
+    - jupyter_contrib_nbextensions
+    - jupyter_nbextensions_configurator
+    - RISE
+    - PyMaxflow
