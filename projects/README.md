@@ -11,4 +11,4 @@ TBD.
 
 ## Presenting on June 4th
 
-TBD.
+- Anisha Bhangui & Pushpita Joardar
