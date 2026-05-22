@@ -1,0 +1,6 @@
+3D Reconstruction Via Triangulation
+
+* Yutong Wang: Introduction, Line of sight, and Paper
+* Zerui Wu: Linear Method, and Paper
+* Tianyi Chen: Non-linear part and Application of 3D Image Reconstruction from 2D images
+* Chun-yu Chang: Conclusion, and Paper
