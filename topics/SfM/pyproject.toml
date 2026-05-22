@@ -1,0 +1,40 @@
+[project]
+name = "sfm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "huggingface-hub>=1.15.0",
+    "imageio>=2.37.3",
+    "imageio-ffmpeg>=0.6.0",
+    "marimo>=0.23.6",
+    "matplotlib>=3.10.9",
+    "nbconvert>=7.17.1",
+    "numpy>=1.26,<2",
+    "opencv-contrib-python>=4.10,<4.13",
+    "playwright>=1.59.0",
+    "plotly>=6.7.0",
+    "scipy>=1.17.1",
+    "safetensors>=0.7.0",
+    "torch>=2.12.0",
+    "vggt",
+    "plotly>=6.7.0",
+    "pycolmap>=4.0.4",
+]
+
+[dependency-groups]
+dev = [
+    "nbformat>=5.10.4",
+    "ruff>=0.15.13",
+    "vegafusion>=2.0.3",
+    "vl-convert-python>=1.9.0.post1",
+]
+
+[tool.uv.workspace]
+members = [
+    "vggt",
+]
+
+[tool.uv.sources]
+vggt = { workspace = true, editable = true }
