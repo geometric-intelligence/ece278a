@@ -1,0 +1,3 @@
+Pushpita: Coordinate Transformation + RANSAC + SupeRANSAC paper
+Wenhui: Feature Detection, Feature Matching, OMNIGlue Paper, Alternate Methods
+Anisha: Wrote code for panorama pipeline, homography, image warping, and image blending
