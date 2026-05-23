@@ -7,7 +7,7 @@
 
 ## Presenting on June 2nd
 
-TBD.
+- Daniel Searl, Dylan Jones, Justin Xiao, Logan Unger
 
 ## Presenting on June 4th
 
