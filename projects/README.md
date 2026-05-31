@@ -8,6 +8,7 @@
 ## Presenting on June 2nd
 
 - Daniel Searl, Dylan Jones, Justin Xiao, Logan Unger
+- Tianyi Chen, Yutong Wang, Zerui Wu, Dingjiang Liang, Chunyu Chang
 
 ## Presenting on June 4th
 
