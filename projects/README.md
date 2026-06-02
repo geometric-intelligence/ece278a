@@ -13,3 +13,4 @@
 
 - Anisha Bhangui & Pushpita Joardar
 - Sreeganesh S, Jason R, Neel T, Justin Z, Jasper O
+- Ari Jacobs & Trent Llewellyn
