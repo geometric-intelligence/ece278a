@@ -7,8 +7,10 @@
 
 ## Presenting on June 2nd
 
+- Yanxiu Jin, Anantajit Subrahmanya, Cameron Cummins, Micheal Smith, Jared Azarte
 - Daniel Searl, Dylan Jones, Justin Xiao, Logan Unger
 - Tianyi Chen, Yutong Wang, Zerui Wu, Dingjiang Liang, Chunyu Chang
+- Yuchen Chen, Mengyao Li, Zichen Zhou, Zejun Huang
 
 ## Presenting on June 4th
 
